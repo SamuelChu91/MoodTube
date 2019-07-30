@@ -1,0 +1,54 @@
+{
+    entities: {
+        users: {
+            1: {
+                id: 1,
+                username: "Jon Snow",
+                email: "kingofthenorth@gmail.com",
+                posted_video_ids: [1,2,3,4],
+                comment_ids: [6,12]
+            },
+            2: {
+                id: 2,
+                username: "Joseph Joestar",
+                email: "josefujosuta@gmail.com",
+                posted_video_ids: [7,10],
+                comment_ids: [8,11]
+            }
+        },
+        videos: {
+            7: {
+                id: 7,
+                title: "I Know What You're About To Say",
+                description: "Always a step ahead",
+                likes: 100,
+                dislikes: 2,
+                poster_id: 2,
+                commenter_id: [..]
+            },
+            10: {
+                id: 10,
+                title: "How To Send a Pillar Man To Space",
+                description: "Had to save the world",
+                likes: 200,
+                dislikes 4,
+                poster_id: 2,
+                commenter_id: [..]
+            }
+        },
+        comments: {
+            6: {
+                id: 6,
+                body: "I know nothing",
+                author_id: 1,
+                video_id: 7
+            },
+            8: {
+                id: 8,
+                body: "Oh my god!",
+                author_id: 2,
+                video_id: 20
+            }
+        }
+    }
+}

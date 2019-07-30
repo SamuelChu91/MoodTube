@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_021622) do
+ActiveRecord::Schema.define(version: 2019_07_30_191416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "body", null: false
+    t.integer "likes", null: false
+    t.integer "dislikes", null: false
+    t.integer "author_id", null: false
+    t.integer "video_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_comments_on_author_id"
+    t.index ["video_id"], name: "index_comments_on_video_id"
+  end
+
+  create_table "dislikes", force: :cascade do |t|
+    t.integer "video_count", null: false
+    t.integer "comment_count", null: false
+    t.integer "video_id", null: false
+    t.integer "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_dislikes_on_comment_id"
+    t.index ["video_id"], name: "index_dislikes_on_video_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "video_count", null: false
+    t.integer "comment_count", null: false
+    t.integer "video_id", null: false
+    t.integer "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["video_id"], name: "index_likes_on_video_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -33,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_07_24_021622) do
     t.string "poster_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes"
+    t.integer "dislikes"
     t.index ["poster_id"], name: "index_videos_on_poster_id"
     t.index ["title"], name: "index_videos_on_title"
   end
