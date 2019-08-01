@@ -1,0 +1,12 @@
+.sign_up_box {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index:5;
+    left:200px;
+    right:200px;
+    top:200px; 
+    bottom:200px;
+    border: 1px solid blueviolet;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+}

@@ -1,0 +1,11 @@
+Lengthy Bugs :
+1. Heroku won't push (application error), localhost:3000 worked
+    - attr_reader :password //// colon was on attr_reader and not password (user model)
+
+2. Text from VideoIndex not rendering, not receiving sessionReducer/userReducer
+    - root_reducer had the other reducers under combineReducer but I never imported the reducers
+
+3. Handlesubmit wouldn't take input
+    - was routing to my presentational components, should go to containers
+    - because they provide our store with the props through connect, presentational is just html
+    
