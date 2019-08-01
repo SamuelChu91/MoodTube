@@ -14,7 +14,7 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        // debugger
         this.props.signup(this.state)
     };
 

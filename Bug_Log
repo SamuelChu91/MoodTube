@@ -9,3 +9,8 @@ Lengthy Bugs :
     - was routing to my presentational components, should go to containers
     - because they provide our store with the props through connect, presentational is just html
     
+4. My log out button was never turning into a sign in button
+    - In my sessionReducer my default state was user: null, however when a user is logged in
+    - my session points to an id with information so state.session.id wasn't
+    - recogned by my presentational header component, which was what my container component
+    - was passing in
