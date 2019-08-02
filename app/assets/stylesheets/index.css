@@ -1,3 +1,7 @@
-.sign_in {
-    border: 1px solid blueviolet 
+.index {
+    background-color: rgb(229, 239, 248);
+}
+
+.all {
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
 }

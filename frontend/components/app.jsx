@@ -9,13 +9,12 @@ import HeaderNavContainer from './header/header_nav_container';
 
 const App = () => (
     <>
-        <div> 
+        <div className='all'> 
         <header>
-            <h1>MoodTube</h1>
-            <h2>NavBar PlaceHolder</h2>
-            <div className='sign_in'>  
+            <div>  
+                {/* <p>Recommended </p> */}
+                {/* <span>crazy</span> */}
             {/* <Link to='/login' >Sign In</Link> */}
-            <HeaderNavContainer />
             </div>
         </header>
             <Switch>

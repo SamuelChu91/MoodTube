@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HeaderNavContainer from './header/header_nav_container';
 
 class VideoIndex extends React.Component {
     constructor(props) {
@@ -9,7 +10,14 @@ class VideoIndex extends React.Component {
     render () {
         return (
             <>
-            <h1>Cool Vids soonTM</h1>
+            <div>
+            <header>
+                <HeaderNavContainer />
+            </header>
+            </div>
+            <div className='index'>
+                <p>Cool Vids soonTM</p>
+            </div>
             </>
         );
     };

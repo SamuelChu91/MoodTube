@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // testing
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    debugger
+    // debugger
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 });
