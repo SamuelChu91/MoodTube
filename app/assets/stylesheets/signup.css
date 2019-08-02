@@ -18,6 +18,22 @@
     /* font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif; */
 }
 
+.signup_input_body {
+    padding: 24px 0px 0px;
+}
+
+.create_msg_div {
+    padding: 16px 0px 0px;
+}
+
+.create_msg {
+    font-size: 24px;
+}
+
+.cont_msg_signup_div {
+    padding-top: 16px;
+}
+
 .signup_next {
     display: block;
     background-color: #1a73e8;
@@ -28,7 +44,16 @@
     font-size: 14px;
 }
 
+input {
+    padding: 8px;
+}
+
 .signin_instead {
     text-decoration: none;
     color: #1a73e8; 
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    font-family: 'Google Sans',arial,sans-serif;
+    line-height: 36px;
 }

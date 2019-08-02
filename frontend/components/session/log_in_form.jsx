@@ -30,13 +30,24 @@ class LoginForm extends React.Component {
         this.props.login(user);
     }
 
-    render () {
+    componentWillUnmount() {
+        this.props.clear();
+    }
 
+    render () {
+        const { errors } = this.props;
+        const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
         return (
             <div className='log_in_box'>
+                <ul>{errorsList}</ul>
                 <img src={window.MoogleURL} />
-                <span className="second">Sign In</span>
-                <span className="third">to continue to MoodTube</span>
+                <div className="second">
+                    <span className="sign_in">Sign In</span>
+                </div>
+                <div className="third">
+                    <span className="cont_mood">to continue to MoodTube</span>
+                </div>
+                <div className="input_body">
                 <form onSubmit={this.handleSubmit}>
                     <label className="login_email">
                         Email
@@ -53,9 +64,10 @@ class LoginForm extends React.Component {
                     <input className="next_submit" type="submit" value="Next"/>
                     <br/>
                     <div >
-                        <Link to='/signup' className='sign_up'>Create Account</Link>
+                <Link to='/signup' className='sign_up'>Create Account</Link>
                     </div>
                 </form>
+                </div>
                 <br/>
                 <div className='demo'>
                 <button onClick={this.demoLogIn}>Demo Log In</button>

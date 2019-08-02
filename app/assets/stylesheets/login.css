@@ -19,11 +19,23 @@
 }
 
 .second {
+    padding: 16px 0px 0px;
+}
+
+.sign_in {
     font-size: 24px;
     font-weight: 400;
 }
 
 .third {
+    padding: 8px 0px 0px;
+}
+
+.input_body {
+    padding: 24px 0px 0px;
+}
+
+.cont_mood {
     font-size: 16px;
 }
 

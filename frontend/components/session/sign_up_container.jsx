@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, clearErrors } from '../../actions/session_actions';
 import SignUpForm from './sign_up_form';
 
 // should route to containers because
@@ -8,8 +8,9 @@ import SignUpForm from './sign_up_form';
 // 500 error should check server
 
 const msp = (state, ownProps) => {
+    // debugger
     return {
-        // errors: state.errors.session,
+        errors: state.errors.session,
         formType: "signup",
     }
 };
@@ -18,6 +19,7 @@ const mdp = (dispatch, ownProps) => {
     // debugger
     return {
         signup: (user) => dispatch(signup(user)),
+        clear: () => dispatch(clearErrors())
     }
 };
 

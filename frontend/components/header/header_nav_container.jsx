@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
 
 const msp = state => {
-    debugger
+    // debugger
     return {
         currentUser: state.session.user,
         users: state.users

@@ -26,32 +26,54 @@ class SignUpForm extends React.Component {
         };
     };
 
-    render() {
+    componentWillUnmount() {
+        this.props.clear();
+    }
 
+    render() {
+        // debugger
+        const { errors } = this.props;
+        const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
         return (
             <div className='sign_up_box'>
-                <form onSubmit={this.handleSubmit}>
-                    <label className="signup_username">
-                        Username
+                <ul>{errorsList}</ul>
+                <img src={window.MoogleURL} className="img_signup_moogle"/>
+                <div className="create_msg_div">
+                    <span className="create_msg">Create Your Moogle Account</span>
+                </div>
+                <div className="cont_msg_signup_div">
+                    <span className="cont_msg_signup">to continue to MoodTube</span>
+                </div>
+                <div className="signup_input_body">
+                <form onSubmit={this.handleSubmit} >
+                    <label>
+                        <span className="signup_username">
+                            Username
+                        </span>
                         <br/>
                         <input onChange={this.handleInput('username')} type="text" value={this.state.username} />
                     </label>
                     <br/>
-                    <label className="signup_email">
-                        Email
+                    <label>
+                        <span className="signup_email">
+                            Email
+                        </span>
                         <br/>
                         <input onChange={this.handleInput('email')} type="text" value={this.state.email} />
                     </label>
                     <br/>
-                    <label className="signup_password">
-                        Password
+                    <label>
+                        <span className="signup_password">
+                            Password
+                        </span>
                         <br/>
                         <input onChange={this.handleInput('password')} type="password" value={this.state.password} />
                     </label>
                     <input className="signup_next" type="submit" value="Next"/>
                     <br/>
-                    <Link className="signin_instead" to='/login' >Signin Instead</Link>
+                    <Link className="signin_instead" to='/login' >Sign in Instead</Link>
                 </form>
+                </div>
             </div>
         )
     }

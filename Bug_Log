@@ -14,3 +14,17 @@ Lengthy Bugs :
     - my session points to an id with information so state.session.id wasn't
     - recogned by my presentational header component, which was what my container component
     - was passing in
+
+5. Errors were displaying and persisting on multiple pages
+    - Needed to clear errors, solved by creating action and passing it into our
+    - reducer and using componentwillunmount to call action
+
+
+
+
+
+
+
+Common Bugs :
+1. Don't put debugger in return objects =(
+2. Check your imports are spelled correctly and taken from the right path
