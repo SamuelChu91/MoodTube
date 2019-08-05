@@ -60,10 +60,10 @@
     width: 88px;
     height: 36px;
     font-size: 14px;
-}
 
-.next_submit:hover {
-    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .demo {

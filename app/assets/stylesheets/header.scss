@@ -34,6 +34,23 @@
     border-radius: 4px;
 }
 
+.drop_button {
+    height: 40px;
+    width: 42px;
+    /* color: white; */
+    border-color: white;
+    background-color: red;
+    border-radius: 50%;
+    
+    &:focus{
+        outline: none;
+    }
+}
+
+.nav_user_icon {
+    color: white;
+} 
+
 .nav_login {
     margin-left: 5px;
     width: 105px;
@@ -48,4 +65,11 @@
 
 .nav_login_text {
     font-style: normal;
+}
+
+.nav_right_parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 14px;
 }

@@ -32,11 +32,12 @@ class HeaderNav extends React.Component{
         let signInButton;
         if (!logged_in) {
             signInButton = <button onClick={this.handleLogIn} className="nav_login">
+                              <i class="fas fa-user"></i>
                               <i className="nav_login_text">Sign In</i>
                            </button>
         } else {
             signInButton = <button onClick={this.openMenu} className="drop_button">
-                              {currentUser.username.slice(0, 1).toUpperCase()}
+                              <i class="fas fa-user nav_user_icon fa-2x"></i>
                            </button>
         }
         let menu;
@@ -62,7 +63,7 @@ class HeaderNav extends React.Component{
                         <i className="fas fa-search"></i>
                     </button>
                 </form>
-                <div>
+                <div className="nav_right_parent">
                     {signInButton}
                     {menu}
                 </div>
