@@ -10,6 +10,7 @@ export const sessionReducer = (oldState = defaultState, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER: {
             // return Object.assign({}, { id: action.user.id });
+            // debugger
             return merge({}, { user: action.user });
         }
         case LOGOUT_CURRENT_USER: {

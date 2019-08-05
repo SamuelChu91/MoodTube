@@ -3,3 +3,49 @@
     justify-content: space-between;
     background-color: white;
 }
+
+.nav_logo {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    /* height: 24px;
+    width: 80px; */
+    padding: 20px;
+}
+
+.the_logo {
+    color: red;
+}
+
+.nav_moodtube {
+    padding-top: 7px;
+}
+
+.search_bar {
+    margin-right: 0px;
+    border-radius: 4px;
+}
+
+.search_icon {
+    background-color: aliceblue;
+    height: 44px;
+    width: 65px;
+    border-radius: 4px;
+}
+
+.nav_login {
+    margin-left: 5px;
+    width: 105px;
+    height: 40px;
+    border: 1px solid rgb(6, 95, 212);
+    border-radius: 2px;
+    outline:none;
+    background: white;
+    font-size: 14px;
+    color: rgb(39, 97, 204);
+}
+
+.nav_login_text {
+    font-style: normal;
+}

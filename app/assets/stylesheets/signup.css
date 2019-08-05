@@ -34,6 +34,11 @@
     padding-top: 16px;
 }
 
+.signup_submits {
+    display: flex;
+    justify-content: space-between;
+}
+
 .signup_next {
     display: block;
     background-color: #1a73e8;
@@ -44,8 +49,8 @@
     font-size: 14px;
 }
 
-input {
-    padding: 8px;
+.signup_next:hover {
+    cursor: pointer;
 }
 
 .signin_instead {
@@ -56,4 +61,6 @@ input {
     letter-spacing: .25px;
     font-family: 'Google Sans',arial,sans-serif;
     line-height: 36px;
+    margin: 8px;
+    padding-top: 3px;
 }

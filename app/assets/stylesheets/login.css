@@ -43,6 +43,13 @@
     text-decoration: none;
     color: #1a73e8;
     /* font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif; */
+    margin: 8px;
+    padding-top: 8px;
+}
+
+.login_submits {
+    display: flex;
+    justify-content: space-between;
 }
 
 .next_submit {
@@ -55,6 +62,16 @@
     font-size: 14px;
 }
 
+.next_submit:hover {
+    cursor: pointer;
+}
+
 .demo {
-    padding: 10px;
+    display: block;
+    background-color: #1a73e8;
+    border-radius: 8px;
+    color: white;
+    width: 88px;
+    height: 36px;
+    font-size: 14px;
 }

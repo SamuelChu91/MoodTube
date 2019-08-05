@@ -7,6 +7,7 @@ const msp = state => {
     // debugger
     return {
         currentUser: state.session.user,
+        logged_in: Boolean(state.session.user),
         users: state.users
     }
 };

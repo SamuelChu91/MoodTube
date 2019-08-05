@@ -10,13 +10,6 @@ import HeaderNavContainer from './header/header_nav_container';
 const App = () => (
     <>
         <div className='all'> 
-        <header>
-            <div>  
-                {/* <p>Recommended </p> */}
-                {/* <span>crazy</span> */}
-            {/* <Link to='/login' >Sign In</Link> */}
-            </div>
-        </header>
             <Switch>
                 <AuthRoute path='/signup' component={SignUpFormContainer} />
                 <AuthRoute path='/login' component={LogInFormContainer} />

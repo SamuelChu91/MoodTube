@@ -50,28 +50,22 @@ class LoginForm extends React.Component {
                 <div className="input_body">
                 <form onSubmit={this.handleSubmit}>
                     <label className="login_email">
-                        Email
-                        <br/>
-                        <input onChange={this.handleInput('email')} type="text" value={this.state.email}/>
+                        <input onChange={this.handleInput('email')} type="text" placeholder="Your Email" value={this.state.email}/>
                     </label>
                     <br/>
                     <label className="login_password">
-                        Password
-                        <br/>
-                        <input onChange={this.handleInput('password')} type="password" value={this.state.password} />
+                        <input onChange={this.handleInput('password')} type="password" placeholder="Password" value={this.state.password} />
                     </label>
                     <br/>
-                    <input className="next_submit" type="submit" value="Next"/>
+                    <div className="login_submits">
+                        <Link to='/signup' className='sign_up'>Create Account</Link>
                     <br/>
-                    <div >
-                <Link to='/signup' className='sign_up'>Create Account</Link>
+                        <input className="next_submit" type="submit" value="Next"/>
                     </div>
                 </form>
                 </div>
                 <br/>
-                <div className='demo'>
-                <button onClick={this.demoLogIn}>Demo Log In</button>
-                </div>
+                <button onClick={this.demoLogIn} className="demo">Demo</button>
             </div>
         )
     }

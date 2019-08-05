@@ -47,31 +47,21 @@ class SignUpForm extends React.Component {
                 <div className="signup_input_body">
                 <form onSubmit={this.handleSubmit} >
                     <label>
-                        <span className="signup_username">
-                            Username
-                        </span>
-                        <br/>
-                        <input onChange={this.handleInput('username')} type="text" value={this.state.username} />
+                        <input onChange={this.handleInput('username')} type="text" placeholder="Your Name" value={this.state.username} />
                     </label>
                     <br/>
                     <label>
-                        <span className="signup_email">
-                            Email
-                        </span>
-                        <br/>
-                        <input onChange={this.handleInput('email')} type="text" value={this.state.email} />
+                        <input onChange={this.handleInput('email')} type="text" placeholder="Your Email" value={this.state.email} />
                     </label>
                     <br/>
                     <label>
-                        <span className="signup_password">
-                            Password
-                        </span>
-                        <br/>
-                        <input onChange={this.handleInput('password')} type="password" value={this.state.password} />
+                        <input onChange={this.handleInput('password')} type="password" placeholder="Password" value={this.state.password} />
                     </label>
-                    <input className="signup_next" type="submit" value="Next"/>
-                    <br/>
-                    <Link className="signin_instead" to='/login' >Sign in Instead</Link>
+                    <div className="signup_submits">
+                        <Link className="signin_instead" to='/login' >Sign in Instead</Link>
+                        <br/>
+                        <input className="signup_next" type="submit" value="Next"/>
+                    </div>
                 </form>
                 </div>
             </div>
