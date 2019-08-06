@@ -18,8 +18,15 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    has_many :videos
-    has_many :comments
+    has_many :videos,
+    foreign_key: :poster_id,
+    primary_key: :id,
+    class_name: :Video
+    
+    has_many :comments,
+    foreign_key: :author_id,
+    primary_key: :id,
+    class_name: :Comment
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

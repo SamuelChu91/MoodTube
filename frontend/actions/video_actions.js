@@ -4,24 +4,34 @@ export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const UPLOAD_VIDEO = "UPLOAD_VIDEO";
 export const EDIT_VIDEO = "EDIT_VIDEO";
-export const DELETE_VIDEO = "DELETE_VIDEO";
+export const REMOVE_VIDEO = "REMOVE_VIDEO";
 
 export const receiveVideo = (video) => ({
     type: RECEIVE_VIDEO,
     video,
 });
 
-export const deleteVideo = (id) => ({
-    type: DELETE_VIDEO,
+export const removeVideo = (id) => ({
+    type: REMOVE_VIDEO,
     id,
 });
+
+export const receiveVideos = (videos) => ({
+    type: RECEIVE_VIDEOS,
+    videos
+})
+
+export const showVids = () => dispatch => {
+    return VideoApUtil.receiveVideos()
+        .then(videos => dispatch(receiveVideos(videos)));
+}
 
 export const uploadVideo = (video) => dispatch => {
     return VideoApUtil.uploadVideo(video)
         .then(video => dispatch(receiveVideo(video)));
 };
 
-export const deleteVideo = () => dispatch => {
+export const deleteVideo = (id) => dispatch => {
     return VideoApUtil.deleteVideo(id)
-        .then(id => dispatch(deleteVideo(id)));
+        .then(id => dispatch(removeVideo(id)));
 };

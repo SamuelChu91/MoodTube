@@ -4,16 +4,44 @@ class Api::VideosController < ApplicationController
         render :index
     end
 
+    def show
+        @video = Video.find(params[:id])
+        render :show
+    end
+    
     def create
         @video = Video.new(video_params)
         if @video.save
             render json: {message: "New Video"}
         else
-            render json: video.errors.full_messages
+            render json: @video.errors.full_messages, status: 422
+        end
+    end
+
+    def edit
+        @video = Video.find(params[:id])
+        render :edit
+    end
+
+    def update
+        @video = Video.find(params[:id])
+        if @video.update(video_params)
+            render :show
+        else
+            render json: @video.errors.full_messages, status: 422
+        end
+    end
+
+    def destroy
+        @video = Video.find(params[:id])
+        if @video.destroy
+            render :show
+        else
+            render json: @video.errors.full_messages, status: 422
         end
     end
     
     def video_params
-        params.require(:video).permit(:title, :description)
+        params.require(:video).permit(:title, :description, :poster_id)
     end
 end

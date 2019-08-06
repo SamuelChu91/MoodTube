@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoIndex from './video_index';
+import Home from './home';
 import { Route, Switch } from 'react-router-dom';
 import LogInFormContainer from './session/log_in_container';
 import SignUpFormContainer from './session/sign_up_container';
@@ -13,7 +13,7 @@ const App = () => (
             <Switch>
                 <AuthRoute path='/signup' component={SignUpFormContainer} />
                 <AuthRoute path='/login' component={LogInFormContainer} />
-                <Route path='/' component={VideoIndex} />
+                <Route path='/' component={Home} />
             </Switch>
         </div>
     </>

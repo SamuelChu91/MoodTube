@@ -15,7 +15,11 @@
 class Comment < ApplicationRecord
     validates :body, presence: true
 
-    belongs_to :user
+    belongs_to :user,
+    foreign_key: :author_id,
+    primary_key: :id,
+    class_name: :User
+
     belongs_to :video
     
 end

@@ -52,6 +52,9 @@
 } 
 
 .nav_login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin-left: 5px;
     width: 105px;
     height: 40px;
@@ -61,6 +64,10 @@
     background: white;
     font-size: 14px;
     color: rgb(39, 97, 204);
+}
+
+.nav_signin_icon {
+    margin-top: 2px;
 }
 
 .nav_login_text {

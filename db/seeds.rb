@@ -6,5 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create( username: "demoPerson", email: "demologin", password: "hunter12");
+User.destroy_all
+Video.destroy_all
 
+# demo user
+demo = User.create!( username: "De Mo", email: "AmIReal@email.com", password: "hunter12")
+
+# video samples
+pup = Video.create!( title: "Awww", description: "Huskies are the best", poster_id: demo.id )
+bye = Video.create!( title: "Game", description: "You Know What Time It Is", poster_id: demo.id )
+ohno = Video.create!( title: "Oh no!", description: "Peak Joseph", poster_id: demo.id )

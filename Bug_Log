@@ -19,7 +19,10 @@ Lengthy Bugs :
     - Needed to clear errors, solved by creating action and passing it into our
     - reducer and using componentwillunmount to call action
 
-
+6. Videos weren't showing up, 500 error
+    - Not all my videos had pics attached, was checking for attachments because
+    - my json view was looking for attachments
+    - 
 
 
 

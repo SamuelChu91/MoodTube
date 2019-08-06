@@ -4,6 +4,11 @@ input {
     width: 366px;
     height: 40px;
     margin: 8px;
+    padding-left: 5px;
+
+    &::placeholder {
+        font-size: 16px;
+    }
 }
 
 button:hover {

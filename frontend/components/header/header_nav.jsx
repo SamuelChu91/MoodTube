@@ -20,11 +20,17 @@ class HeaderNav extends React.Component{
         this.setState({ toggled: true })
     }
 
-    closeMenu() {
+    // refactor this, hacky
+    closeMenu(e) {
+        // debugger
         if (this.state.toggled) {
-            this.setState({ toggled: false })
+            setTimeout(() => {
+                this.setState({ toggled: false })
+            }, 100);
         }
     }
+
+
     
     render () {
         const { currentUser, logout, logged_in } = this.props;
@@ -32,7 +38,7 @@ class HeaderNav extends React.Component{
         let signInButton;
         if (!logged_in) {
             signInButton = <button onClick={this.handleLogIn} className="nav_login">
-                              <i class="fas fa-user"></i>
+                              <i class="fas fa-user nav_signin_icon"></i>
                               <i className="nav_login_text">Sign In</i>
                            </button>
         } else {
@@ -50,7 +56,7 @@ class HeaderNav extends React.Component{
         }
         // debugger
         return (
-            <div className="headnav" onClick={this.closeMenu}>
+            <div className="headnav">
                 <Link to ='/' className="nav_logo">
                     <i className="fab fa-youtube the_logo fa-2x"></i>
                     <h1 className="nav_moodtube">
@@ -63,7 +69,7 @@ class HeaderNav extends React.Component{
                         <i className="fas fa-search"></i>
                     </button>
                 </form>
-                <div className="nav_right_parent">
+                <div className="nav_right_parent" onBlur={this.closeMenu}>
                     {signInButton}
                     {menu}
                 </div>

@@ -1,12 +1,14 @@
 import { merge } from 'lodash';
-import { RECEIVE_VIDEO, DELETE_VIDEO } from '../actions/video_actions';
+import { RECEIVE_VIDEO, REMOVE_VIDEO, RECEIVE_VIDEOS } from '../actions/video_actions';
 
-const videoReducer = (state = {}, action) => {
+const videosReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
+        case RECEIVE_VIDEOS:
+            return action.videos;
         case RECEIVE_VIDEO:
             return merge({}, state, { [action.video.id]: action.video });
-        case DELETE_VIDEO:
+        case REMOVE_VIDEO:
             let newState = merge({}, state);
             delete newState[action.id];
             return newState;
@@ -15,4 +17,4 @@ const videoReducer = (state = {}, action) => {
     }
 };
 
-export default videoReducer;
+export default videosReducer;
