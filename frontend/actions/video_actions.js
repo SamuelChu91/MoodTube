@@ -24,7 +24,12 @@ export const receiveVideos = (videos) => ({
 export const showVids = () => dispatch => {
     return VideoApUtil.receiveVideos()
         .then(videos => dispatch(receiveVideos(videos)));
-}
+};
+
+export const showVid = (id) => dispatch => {
+    return VideoApUtil.receiveVideo(id)
+        .then(video => dispatch(receiveVideo(video)));
+};
 
 export const uploadVideo = (video) => dispatch => {
     return VideoApUtil.uploadVideo(video)
@@ -35,3 +40,4 @@ export const deleteVideo = (id) => dispatch => {
     return VideoApUtil.deleteVideo(id)
         .then(id => dispatch(removeVideo(id)));
 };
+

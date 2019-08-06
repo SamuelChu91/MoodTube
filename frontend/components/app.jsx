@@ -5,7 +5,7 @@ import LogInFormContainer from './session/log_in_container';
 import SignUpFormContainer from './session/sign_up_container';
 import { Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import HeaderNavContainer from './header/header_nav_container';
+import VideoShowContainer from './video/video_show_container';
 
 const App = () => (
     <>
@@ -13,6 +13,7 @@ const App = () => (
             <Switch>
                 <AuthRoute path='/signup' component={SignUpFormContainer} />
                 <AuthRoute path='/login' component={LogInFormContainer} />
+                <Route path='/videos/:id' component={VideoShowContainer} />
                 <Route path='/' component={Home} />
             </Switch>
         </div>

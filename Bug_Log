@@ -19,12 +19,18 @@ Lengthy Bugs :
     - Needed to clear errors, solved by creating action and passing it into our
     - reducer and using componentwillunmount to call action
 
-6. Videos weren't showing up, 500 error
+6. Dropdown menu only closed inside header_nav
+    - Only the local state in header nav had access
+    - Used onBlur so when button isn't the focus we 'closemenu'
+    - Hacky fix, used setTimeout so that clicking inside the menu
+    - still let me use 'logout', otherwise dropdown closed because
+    - button wasn't recognized
+
+7. Videos weren't showing up, 500 error
     - Not all my videos had pics attached, was checking for attachments because
-    - my json view was looking for attachments
-    - 
-
-
+    - my json view was looking for attachments, incorrect syntax passed into my from
+    - had to attach pics to all my sseded vids, then save! them
+    - didn't interpolate correcly in my video item form
 
 
 
