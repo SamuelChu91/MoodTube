@@ -12,13 +12,16 @@ class VideoShow extends React.Component {
     }
 
     render() {
+        // let video = this.props.video || null;
+        // if (!this.props.video) {return null};
+        debugger
         return (
             <div>
                 <header>
                     <HeaderNavContainer />
                 </header>
                 <div>
-                    <VideoShowItem />
+                    <VideoShowItem video={this.props.video} />
                 </div>
             </div>
         )
