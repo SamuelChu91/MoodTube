@@ -14,7 +14,7 @@ class VideoShow extends React.Component {
     render() {
         // let video = this.props.video || null;
         // if (!this.props.video) {return null};
-        debugger
+        // debugger
         return (
             <div>
                 <header>
