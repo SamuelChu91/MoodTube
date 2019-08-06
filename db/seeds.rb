@@ -14,5 +14,10 @@ demo = User.create!( username: "De Mo", email: "AmIReal@email.com", password: "h
 
 # video samples
 pup = Video.create!( title: "Awww", description: "Huskies are the best", poster_id: demo.id )
+pop.pic.attach(io: File.open("/Users/lingxiahe/Documents/Pictures/two_puppies.png"), filename: "two_puppies.png")
 bye = Video.create!( title: "Game", description: "You Know What Time It Is", poster_id: demo.id )
+bye.pic.attach(io: File.open("/Users/lingxiahe/Documents/Pictures/dame.jpg"), filename: "dame.jpg")
 ohno = Video.create!( title: "Oh no!", description: "Peak Joseph", poster_id: demo.id )
+ohno.pic.attach(io: File.open("/Users/lingxiahe/Documents/Pictures/joseph.jgp"), filename: "joseph.jpg")
+
+# need to attach in my seed file for heroku

@@ -26,7 +26,7 @@ class HeaderNav extends React.Component{
         if (this.state.toggled) {
             setTimeout(() => {
                 this.setState({ toggled: false })
-            }, 100);
+            }, 250);
         }
     }
 
