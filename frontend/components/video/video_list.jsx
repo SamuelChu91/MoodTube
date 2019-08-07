@@ -19,9 +19,9 @@ class VideoList extends React.Component {
         });
         
         return (
-            <div>
+            <div className="vid_index_row_stuff">
                     <h2>Trending</h2>
-                <ul className="vid_index_row">
+                <ul className="vid_index_row_vids">
                     {listOfVideos}
                 </ul>
             </div>

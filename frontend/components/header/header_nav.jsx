@@ -84,12 +84,15 @@ class HeaderNav extends React.Component{
         // debugger
         return (
             <div className="headnav">
-                <Link to ='/' className="nav_logo">
-                    <i className="fab fa-youtube the_logo fa-2x"></i>
-                    <h1 className="nav_moodtube">
-                        MoodTube
-                    </h1>
-                </Link>
+                <div className="nav_topleft">
+                    <i className="fas fa-user-graduate nav_topleft_icon"></i>
+                    <Link to ='/' className="nav_logo">
+                        <i className="fab fa-youtube the_logo fa-2x"></i>
+                        <h1 className="nav_moodtube">
+                            MoodTube
+                        </h1>
+                    </Link>
+                </div>
                 <form>
                     <input type="text" placeholder="Search" className="search_bar"/>
                     <button className="search_icon">

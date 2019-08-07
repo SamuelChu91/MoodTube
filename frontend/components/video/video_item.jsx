@@ -5,7 +5,7 @@ class VideoItem extends React.Component {
     render() {
         // debugger
         return (
-            <Link to={`/videos/${this.props.video.id}`} className="vid_index_title">
+            <Link to={`/videos/${this.props.video.id}`} className="vid_index">
                 <img src={this.props.video.photoUrl} className="video_image"/>
                 <h5 className="vid_index_title">{this.props.video.title}</h5>
                 <section className="vid_index_botdesc">

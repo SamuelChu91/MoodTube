@@ -1,7 +1,27 @@
 .index {
     background-color: rgb(250, 248, 248);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_body_icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    width: 2.5%;
+    padding: 5px;
 }
 
 .all {
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
 }
+

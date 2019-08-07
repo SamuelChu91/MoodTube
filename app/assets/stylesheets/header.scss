@@ -7,6 +7,16 @@
     padding: 10px;
 }
 
+.nav_topleft {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_topleft_icon {
+    color: rgb(77, 77, 77);
+}
+
 .nav_logo {
     display: flex;
     justify-content: center;
@@ -48,6 +58,10 @@
 
 .nav_upload {
     color: rgb(96, 96, 96);
+
+    &:hover {
+        opacity: 0.4;
+    }
 }
 
 .drop_button {

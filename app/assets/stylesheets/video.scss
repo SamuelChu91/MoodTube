@@ -3,6 +3,10 @@
     height: 118px;
 }
 
+.vid_index {
+    text-decoration: none;
+}
+
 .vid_index_vid {
     margin: 5px;
     display: block;
@@ -10,12 +14,17 @@
 }
 
 .vid_index_title {
-    text-decoration: none;
     font-size: 14px;
     color: black;
 }
 
-.vid_index_row {
+.vid_index_row_stuff {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vid_index_row_vids {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;

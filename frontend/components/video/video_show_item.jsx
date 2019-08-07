@@ -13,12 +13,19 @@ class VideoShowItem extends React.Component {
                 <p className="vid_views">91 Views</p>
                 <br/>
                 <div>
-                    <section className="">
-
+                    <section className="vid_show_desc_top">
+                        <div className="vid_show_desc_top_left">
+                            <i className="fas fa-user vid_show_channel_icon"></i>
+                            <p>Channel Name</p>
+                        </div>
+                        <button className="vid_show_sub">SUBSCRIBE 3M</button>
                     </section>
-                    <p className="vid_description">{this.props.video.description}</p>
+                    <div className="vid_show_desc_stuff">
+                        <p className="vid_description">{this.props.video.description}</p>
+                        <br/>
+                        <p className="vid_show_more">SHOW MORE</p>
+                    </div>
                 </div>
-                {/* <video src={this.props.video.videoUrl} className="video_vid" /> */}
             </div>
         );
     };

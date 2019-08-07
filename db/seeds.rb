@@ -38,4 +38,4 @@ evo.pic.attach(io: file, filename: "evo.jpg")
 
 camp = Video.create!( title: "Why App Academy is the Best Decision I Ever Made", description: "Hopefully this video helped you guys.", poster_id: demo.id )
 file = open("https://moodtube-seeds.s3.amazonaws.com/bootcamp.png")
-camp.pic.attach(io: file, filename: "bootcamp.png")
+camp.pic.attach(io: file, filename: "boot")

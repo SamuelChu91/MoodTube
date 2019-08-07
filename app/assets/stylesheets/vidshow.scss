@@ -16,9 +16,57 @@
 .vid_views {
     font-size: 14px;
     color: #606060;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(229, 229, 299);
+}
+
+.vid_show_desc_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vid_show_desc_top_left {
+    display: flex;
+}
+
+.vid_show_channel_icon {
+    color: white;
+    background-color: blue;
+    border-radius: 70%;
+}
+
+.vid_show_sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    width: 145px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 2px;
+    outline: none;
+    background: red;
+    font-size: 14px;
+    color: white;
+}
+
+.vid_show_desc_stuff {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgb(229, 229, 299);
 }
 
 .vid_description {
     font-size: 14px;
+}
+
+.vid_show_more {
+    font-size: 13px;
+    color: #606060;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
