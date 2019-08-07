@@ -13,12 +13,18 @@
 
 .vid_index_row {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     list-style: none;
 }
 
 .vid_index_botdesc {
     display: flex;
-    justify-content: center
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vid_index_views {
+    margin-top: 5px;
+    margin-right: 5px;
 }
