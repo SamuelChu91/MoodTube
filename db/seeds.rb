@@ -29,3 +29,5 @@ file = open("https://moodtube-seeds.s3.amazonaws.com/joseph.jpg")
 ohno.pic.attach(io: file, filename: "joseph,jpg")
 # need to attach in my seed file for heroku
 lofi = Video.create!( title: "Lofi hip hop mix - Beats to Relax/Study to", description: "Thank you for listening, I hope you will have a good time here", poster_id: demo_id )
+file = open("https://moodtube-seeds.s3.amazonaws.com/lofigirl.jpeg")
+lofi.pic.attach(io: file, filename: "lofigirl.jpeg")

@@ -10,6 +10,7 @@
 .vid_index_title {
     text-decoration: none;
     font-size: 14px;
+    color: black;
 }
 
 .vid_index_row {
@@ -29,4 +30,94 @@
     margin-top: 5px;
     margin-right: 5px;
     font-size: 12px;
+    color: rgb(97, 97, 97);
+}
+
+.vid_upload_window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+}
+
+.vid_upload_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 55%;
+    height: 50%;
+    background-color: white;
+    
+}
+
+.vid_upload_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    background-color: white;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.vid_upload_arrow {
+    color: rgb(177, 174, 174);
+    margin: 7px;
+
+    &:hover {
+        color: red;
+    }
+}
+
+.vid_upload_sel {
+    color: rgb(63, 63, 63);
+    margin: 5px;
+    font-size: 20px;
+}
+
+.vid_upload_drag {
+    color: rgb(158, 155, 155);
+    margin: 7px;
+    font-size: 14px;
+}
+
+.vid_upload_input {
+    visibility: hidden;
+}
+
+.vid_upload_bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 54%;
+    height: 20%;
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.vid_upload_help {
+    font-size: 16px;
+    color: rgb(133, 129, 124)
+}
+
+.vid_upload_bot_text {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: rgb(158, 155, 155)
+}
+
+.vid_upload_links {
+    text-decoration: none;
+    margin-right: 7px;
+    font-size: 15px;
+    color: rgb(158, 155, 155);
 }
