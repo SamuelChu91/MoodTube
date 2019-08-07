@@ -11,6 +11,12 @@ input {
     }
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
 button:hover {
     cursor: pointer;
 }

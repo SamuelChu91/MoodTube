@@ -7,6 +7,7 @@ class HeaderNav extends React.Component{
         this.state = {
             toggled: false
         };
+        this.dropDownRef = React.createRef();
         this.openMenu = this.openMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
         this.handleLogIn = this.handleLogIn.bind(this);
@@ -33,7 +34,16 @@ class HeaderNav extends React.Component{
         // }
     }
 
-
+    setBlurListener(ref, callback) {
+        return event => {
+            debugger
+            const { relatedTarget } = event;
+            const node = ref.current;
+            if (node !== relatedTarget && !node.contains(relatedTarget)) {
+                callback();
+            }
+        };
+    }
     
     // refactor this, hacky
     // closeMenu(e) {
@@ -63,9 +73,7 @@ class HeaderNav extends React.Component{
         }
         let menu;
         if (currentUser && this.state.toggled) {
-            menu = <div className="nav_dropdown_div" ref={(element) => {
-                this.dropdownMenu = element;
-            }}>   
+            menu = <div className="nav_dropdown_div" ref={this.dropDownRef}>   
             <ul className="dropdown" >
                       <li>{currentUser.username}</li>
                       <li>{currentUser.email}</li>
@@ -88,9 +96,23 @@ class HeaderNav extends React.Component{
                         <i className="fas fa-search"></i>
                     </button>
                 </form>
-                <div className="nav_right_parent" onBlur={this.closeMenu}>
-                    {signInButton}
-                        {menu}
+                <div className="nav_icons">
+                    <Link to='/upload' className="nav_upload">
+                        <i className="fas fa-file-video"></i>
+                    </Link>
+                    <div>
+                        <i className="fas fa-th nav_upload"></i>
+                    </div>
+                    <div>
+                        <i className="fas fa-share-square nav_upload"></i>
+                    </div>
+                    <div>
+                        <i className="fas fa-bell nav_upload"></i>
+                    </div>
+                    <div className="nav_right_parent" onBlur={this.setBlurListener(this.dropDownRef, this.closeMenu)}>
+                        {signInButton}
+                            {menu}
+                    </div>
                 </div>
             </div>
         );
