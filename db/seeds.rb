@@ -28,6 +28,14 @@ file = open("https://moodtube-seeds.s3.amazonaws.com/joseph.jpg")
 # ohno.pic.attach(io: File.open("/Users/lingxiahe/Documents/Pictures/joseph.jgp"), filename: "joseph.jpg")
 ohno.pic.attach(io: file, filename: "joseph,jpg")
 # need to attach in my seed file for heroku
-lofi = Video.create!( title: "Lofi hip hop mix - Beats to Relax/Study to", description: "Thank you for listening, I hope you will have a good time here", poster_id: demo_id )
+lofi = Video.create!( title: "Lofi hip hop mix - Beats to Relax/Study to", description: "Thank you for listening, I hope you will have a good time here", poster_id: demo.id )
 file = open("https://moodtube-seeds.s3.amazonaws.com/lofigirl.jpeg")
 lofi.pic.attach(io: file, filename: "lofigirl.jpeg")
+
+evo = Video.create!( title: "Official Evo Moment #37, Daigo vs Justin Evo 2004", description: "This is the official Daigo vs Justin Parry Moment.", poster_id: demo.id )
+file = open("https://moodtube-seeds.s3.amazonaws.com/evo.jpg")
+evo.pic.attach(io: file, filename: "evo.jpg")
+
+camp = Video.create!( title: "Why App Academy is the Best Decision I Ever Made", description: "Hopefully this video helped you guys.", poster_id: demo.id )
+file = open("https://moodtube-seeds.s3.amazonaws.com/bootcamp.png")
+camp.pic.attach(io: file, filename: "bootcamp.png")

@@ -5,6 +5,8 @@
 
 .vid_index_vid {
     margin: 5px;
+    display: block;
+    max-width: 210px;
 }
 
 .vid_index_title {
@@ -16,7 +18,7 @@
 .vid_index_row {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     list-style: none;
 }
 
