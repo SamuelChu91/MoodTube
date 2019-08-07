@@ -16,19 +16,34 @@ class HeaderNav extends React.Component{
         this.props.history.push('/login');
     }
 
-    openMenu() {
+    openMenu(e) {
+        e.preventDefault();
         this.setState({ toggled: true })
     }
+        
+    //     , () => {
+    //         document.addEventListener('click', this.closeMenu);
+    //     });
+    // }
 
-    // refactor this, hacky
     closeMenu(e) {
-        // debugger
-        if (this.state.toggled) {
-            setTimeout(() => {
-                this.setState({ toggled: false })
-            }, 250);
-        }
+        debugger
+        // if (e.currentTarget.children[1] !== this.dropdownMenu){
+            this.setState({ toggled: false })
+        // }
     }
+
+
+    
+    // refactor this, hacky
+    // closeMenu(e) {
+    //     debugger
+    //     if (!this.dropdownMenu.contains(e.target)) {
+    //         this.setState({ toggled: false }, () => {
+    //             document.removeEventListener('click', this.closeMenu);
+    //         });
+    //     }
+    // }
 
 
     
@@ -38,22 +53,26 @@ class HeaderNav extends React.Component{
         let signInButton;
         if (!logged_in) {
             signInButton = <button onClick={this.handleLogIn} className="nav_login">
-                              <i class="fas fa-user nav_signin_icon"></i>
+                              <i className="fas fa-user nav_signin_icon"></i>
                               <i className="nav_login_text">Sign In</i>
                            </button>
         } else {
             signInButton = <button onClick={this.openMenu} className="drop_button">
-                              <i class="fas fa-user nav_user_icon fa-2x"></i>
+                              <i className="fas fa-user nav_user_icon fa-2x"></i>
                            </button>
         }
         let menu;
-        if (this.state.toggled) {
-            menu = <ul className="dropdown">
+        if (currentUser && this.state.toggled) {
+            menu = <div className="nav_dropdown_div" ref={(element) => {
+                this.dropdownMenu = element;
+            }}>   
+            <ul className="dropdown" >
                       <li>{currentUser.username}</li>
                       <li>{currentUser.email}</li>
                       <li><button onClick={logout}>Log Out</button></li>
                    </ul>
-        }
+            </div>
+        } else { menu = null}
         // debugger
         return (
             <div className="headnav">
@@ -71,7 +90,7 @@ class HeaderNav extends React.Component{
                 </form>
                 <div className="nav_right_parent" onBlur={this.closeMenu}>
                     {signInButton}
-                    {menu}
+                        {menu}
                 </div>
             </div>
         );

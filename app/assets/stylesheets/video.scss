@@ -2,3 +2,23 @@
     width: 210px;
     height: 118px;
 }
+
+.vid_index_vid {
+    margin: 5px;
+}
+
+.vid_index_title {
+    text-decoration: none;
+}
+
+.vid_index_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.vid_index_botdesc {
+    display: flex;
+    justify-content: center
+}

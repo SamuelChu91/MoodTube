@@ -1,7 +1,10 @@
 .headnav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
+    position: relative;
+    padding: 10px;
 }
 
 .nav_logo {
@@ -45,6 +48,7 @@
     &:focus{
         outline: none;
     }
+    padding: 5px;
 }
 
 .nav_user_icon {
@@ -74,9 +78,22 @@
     font-style: normal;
 }
 
-.nav_right_parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 14px;
+// .nav_right_parent {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-right: 14px;
+// }
+
+.nav_dropdown_div {
+    position: absolute;
+    right: 50px;
+    background: white;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+.dropdown {
+    list-style: none;
 }

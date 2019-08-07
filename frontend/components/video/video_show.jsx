@@ -20,7 +20,7 @@ class VideoShow extends React.Component {
                 <header>
                     <HeaderNavContainer />
                 </header>
-                <div>
+                <div className="show_body_window">
                     <VideoShowItem video={this.props.video} />
                 </div>
             </div>

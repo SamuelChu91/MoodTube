@@ -1,0 +1,24 @@
+.show_body_window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vid_player {
+    margin-bottom: 40px;
+}
+
+.vid_title {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.vid_views {
+    font-size: 14px;
+    color: #606060;
+    border-bottom: 1px solid rgb(229, 229, 299);
+}
+
+.vid_description {
+    font-size: 14px;
+}

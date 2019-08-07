@@ -11,12 +11,17 @@ class VideoList extends React.Component {
     }
 
     render() {
-        const listOfVideos = this.props.videos.map((video, idx) =>
-        <li><VideoItem video={video} key={idx}/></li>);
+        const listOfVideos = this.props.videos.map((video, idx) =>{
+            // debugger
+            return (
+                <li key={video.id} className="vid_index_vid"><VideoItem video={video} /></li>
+            );
+        });
         
         return (
             <div>
-                <ul>
+                    <h2>Trending</h2>
+                <ul className="vid_index_row">
                     {listOfVideos}
                 </ul>
             </div>

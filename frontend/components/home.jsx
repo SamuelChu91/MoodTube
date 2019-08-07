@@ -13,17 +13,16 @@ class Home extends React.Component {
 
     render () {
         return (
-            <>
             <div>
-                <header>
-                    <HeaderNavContainer />
-                </header>
+                <div>
+                    <header>
+                        <HeaderNavContainer />
+                    </header>
+                </div>
+                <div className='index'>
+                    <VideoListContainer />
+                </div>
             </div>
-            <div className='index'>
-                <h2>Recommended</h2>
-                <VideoListContainer />
-            </div>
-            </>
         );
     };
 };
