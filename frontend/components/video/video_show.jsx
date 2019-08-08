@@ -37,13 +37,10 @@ class VideoShow extends React.Component {
         });
         // debugger
         return (
-            <div>
-                <header className="show_top_bar">
-                    <HeaderNavContainer />
-                </header>
+            <div className="show_window">
                 <div className="show_body_window">
                     <VideoShowItem video={this.props.video} />
-                    <div>
+                    <div className="show_right">
                         <div className="show_side_header">
                             <p className="show_side_header_up">Up next</p>
                             <p className="show_side_header_auto">AUTOPLAY</p>

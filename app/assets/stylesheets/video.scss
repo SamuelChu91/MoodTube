@@ -1,3 +1,8 @@
+.vid_item_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .video_image {
     width: 210px;
     height: 118px;
@@ -5,12 +10,12 @@
 
 .vid_index {
     text-decoration: none;
+    width: 210px;
+    height: 118px;
 }
 
 .vid_index_vid {
     margin: 5px;
-    display: block;
-    max-width: 210px;
 }
 
 .vid_index_title {
@@ -22,14 +27,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 5px;
-    border-bottom: 1px solid rgb(229, 229, 299);
+    padding-bottom: 100px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgb(207, 207, 212)
 }
 
 .vid_index_row_vids {
     display: flex;
     justify-content: flex-start;
-    align-items: stretch;
+    // align-items: stretch;
     list-style: none;
 }
 
@@ -131,6 +137,6 @@
 .vid_upload_links {
     text-decoration: none;
     margin-right: 7px;
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(158, 155, 155);
 }

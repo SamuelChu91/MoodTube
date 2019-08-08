@@ -3,7 +3,8 @@ input {
     border: 1px solid rgb(199, 197, 197);
     width: 366px;
     height: 40px;
-    margin: 8px;
+    margin-bottom: 12px;
+    margin-top: 8px;
     padding-left: 5px;
 
     &::placeholder {
@@ -19,6 +20,10 @@ button,
 }
 button:hover {
     cursor: pointer;
+}
+
+li {
+    list-style: none;
 }
 
 h5 {

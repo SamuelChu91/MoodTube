@@ -28,7 +28,7 @@ class HeaderNav extends React.Component{
     // }
 
     closeMenu(e) {
-        debugger
+        // debugger
         // if (e.currentTarget.children[1] !== this.dropdownMenu){
             this.setState({ toggled: false })
         // }
@@ -36,7 +36,7 @@ class HeaderNav extends React.Component{
 
     setBlurListener(ref, callback) {
         return event => {
-            debugger
+            // debugger
             const { relatedTarget } = event;
             const node = ref.current;
             if (node !== relatedTarget && !node.contains(relatedTarget)) {
@@ -75,9 +75,16 @@ class HeaderNav extends React.Component{
         if (currentUser && this.state.toggled) {
             menu = <div className="nav_dropdown_div" ref={this.dropDownRef}>   
             <ul className="dropdown" >
-                      <li>{currentUser.username}</li>
-                      <li>{currentUser.email}</li>
-                      <li><button onClick={logout}>Log Out</button></li>
+                <div className="nav_dropdown_top">
+                    <div>
+                        <i className="fas fa-user fa-2x nav_dropdown_top_user"></i>
+                    </div>
+                    <div>
+                        <li>{currentUser.username}</li>
+                        <li>{currentUser.email}</li>
+                    </div>
+                </div>
+                      <li><button onClick={logout}>Sign Out</button></li>
                    </ul>
             </div>
         } else { menu = null}

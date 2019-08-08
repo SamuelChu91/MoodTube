@@ -14,11 +14,6 @@ class Home extends React.Component {
     render () {
         return (
             <div>
-                <div className="home_window">
-                    <header>
-                        <HeaderNavContainer />
-                    </header>
-                </div>
                 <div className="home_body">
                     <div className="home_body_icons">
                         <a href="https://github.com/SamuelChu91">

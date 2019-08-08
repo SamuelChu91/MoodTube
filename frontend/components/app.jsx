@@ -7,19 +7,26 @@ import { Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import VideoShowContainer from './video/video_show_container';
 import VideoUploadContainer from './video/video_upload_container';
+import HeaderNavContainer from './header/header_nav_container';
+import Main from './main';
 
-const App = () => (
+const App = () => {
+    // debugger
+    return (
     <>
         <div className='all'> 
+        {/* <HeaderNavContainer/> */}
             <Switch>
-                <AuthRoute path='/signup' component={SignUpFormContainer} />
-                <AuthRoute path='/login' component={LogInFormContainer} />
-                <Route path='/videos/:id' component={VideoShowContainer} />
-                <Route path='/upload' component={VideoUploadContainer} />
-                <Route path='/' component={Home} />
+                {/* <Main/> */}
+                <AuthRoute exact path='/signup' component={SignUpFormContainer} />
+                <AuthRoute exact path='/login' component={LogInFormContainer} />
+                <Route exact path='/upload' component={VideoUploadContainer} />
+                {/* <Route path='/videos/:id' component={VideoShowContainer} /> */}
+                <Route path='/' component={Main} />
             </Switch>
         </div>
     </>
-);
+    );
+}
 
 export default App;

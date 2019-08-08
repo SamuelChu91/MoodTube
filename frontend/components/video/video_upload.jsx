@@ -27,9 +27,9 @@ class VideoUpload extends React.Component {
                         <span className="vid_upload_bot_text">By submitting your videos to YouTube, you acknowledge that you agree to YouTube's Terms of Service and Community Guidelines.</span>
                         <span className="vid_upload_bot_text">Please be sure not to violate others' copyright or privacy rights. Learn more</span>
                         <div>
-                            <Link to="https://support.google.com/youtube/topic/9257439?hl=en&visit_id=637007986476488821-1567737943&rd=1" className="vid_upload_links">Upload Instructions</Link>
-                            <Link to="https://support.google.com/youtube/topic/2888603?hl=en" className="vid_upload_links">Troubleshooting</Link>
-                            <Link to="https://support.google.com/youtube/answer/57407?hl=en" className="vid_upload_links">Mobile Uploads</Link>
+                            <a href="https://support.google.com/youtube/topic/9257439?hl=en&visit_id=637007986476488821-1567737943&rd=1" className="vid_upload_links">Upload Instructions  |</a>
+                            <a href="https://support.google.com/youtube/topic/2888603?hl=en" className="vid_upload_links">Troubleshooting  |</a>
+                            <a href="https://support.google.com/youtube/answer/57407?hl=en" className="vid_upload_links">Mobile Uploads</a>
                         </div>
                     </div>
                 </div>

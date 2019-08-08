@@ -15,8 +15,8 @@ class VideoShowItem extends React.Component {
                 <div>
                     <section className="vid_show_desc_top">
                         <div className="vid_show_desc_top_left">
-                            <i className="fas fa-user vid_show_channel_icon"></i>
-                            <p>Channel Name</p>
+                            <i className="fas fa-user vid_show_channel_icon fa-2x"></i>
+                            <p>Quirky Channel Name</p>
                         </div>
                         <button className="vid_show_sub">SUBSCRIBE 3M</button>
                     </section>

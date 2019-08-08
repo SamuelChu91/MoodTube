@@ -1,5 +1,4 @@
 
-
 .index {
     background-color: rgb(250, 248, 248);
     display: flex;
@@ -16,7 +15,7 @@
 .home_body_icons {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgb(228, 228, 228);
     width: 2.5%;

@@ -7,27 +7,41 @@
     height: 100%;
 }
 
-// where is the width coming from
+// .signup_stuff {
+//     display: flex;
+//     justify-content: space-between;
+// }
 
 .sign_up_box {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: flex-start;
     overflow: hidden;
     position: fixed;
-    width: 500px;
+    width: 750px;
     flex-grow: 1;
     box-sizing: border-box;
     border-radius: 8px;
     border: 1px solid rgb(199, 197, 197);
     min-height: 500px;
-    // padding: 48px 40px 36px;
+    padding: 48px 40px 36px;
     /* font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif; */
 }
 
+.signup_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img_signup_moogle {
+    width: 151px;
+    height: 55px;
+}
+
 .signup_input_body {
-    padding: 24px 0px 0px;
+    // padding: 24px 0px 0px;
 }
 
 .create_msg_div {
@@ -40,6 +54,7 @@
 
 .cont_msg_signup_div {
     padding-top: 16px;
+    justify-content: space-evenly;
 }
 
 .signup_submits {
@@ -71,4 +86,23 @@
     line-height: 36px;
     margin: 8px;
     padding-top: 3px;
+}
+
+.signup_shield {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup_shield_icon {
+    color: blue;
+    border-radius: 100%;
+    margin-bottom: 25px;
+}
+
+.signup_shield_text {
+    font-weight: 300;
+    margin: 4px;
+    color: rgb(58, 57, 57)
 }

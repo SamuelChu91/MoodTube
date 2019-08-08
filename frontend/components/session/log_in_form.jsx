@@ -35,13 +35,14 @@ class LoginForm extends React.Component {
     }
 
     render () {
+        debugger
         const { errors } = this.props;
         const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
         return (
             <div className="login_window">
                 <div className='log_in_box'>
                     <ul>{errorsList}</ul>
-                    <img src={window.MoogleURL} />
+                    <img src={window.MoogleURL} className="login_img" />
                     <div className="second">
                         <span className="sign_in">Sign In</span>
                     </div>
