@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
-import { showVid } from '../../actions/video_actions';
+import { showVid, showVids } from '../../actions/video_actions';
 import VideoShow from './video_show';
 
 const msp = (state, ownProps) => {
     return ({
         video: state.videos[ownProps.match.params.id],
+        videos: Object.values(state.videos),
     });
 };
 
 const mdp = (dispatch, ownProps) => {
     return ({
         showVid: (id) => dispatch(showVid(id)),
+        showVids: () => dispatch(showVids()),
     });
 };
 

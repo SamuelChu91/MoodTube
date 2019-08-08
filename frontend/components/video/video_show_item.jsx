@@ -10,7 +10,7 @@ class VideoShowItem extends React.Component {
                 {/* <h1>please</h1> */}
                 <h2 className="vid_title">{this.props.video.title}</h2>
                 <br/>
-                <p className="vid_views">91 Views</p>
+                <p className="vid_views">1991 Views</p>
                 <br/>
                 <div>
                     <section className="vid_show_desc_top">

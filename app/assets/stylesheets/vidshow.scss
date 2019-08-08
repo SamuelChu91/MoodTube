@@ -1,7 +1,31 @@
+.show_top_bar {
+    position: sticky;
+}
+
 .show_body_window {
     display: flex;
     justify-content: center;
+    align-content: stretch;
+}
+
+.show_side_header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin: 8px;
+}
+
+.show_side_header_up {
+    color: rgb(180, 180, 180);
+}
+
+.show_side_header_auto {
+    color: rgb(151, 151, 151);
+    font-size: 14px;
+}
+
+.show_side_vids {
+    align-items: stretch;
 }
 
 .vid_player {
@@ -69,4 +93,20 @@
     &:hover {
         cursor: pointer;
     }
+}
+
+.vid_show_side_link {
+    display: flex;
+    text-decoration: none;
+}
+
+.vid_side_caption {
+    display: flex;
+    flex-direction: column;
+}
+
+.video_side_image {
+    width: 170px;
+    height: 100px;
+    margin-right: 8px;
 }

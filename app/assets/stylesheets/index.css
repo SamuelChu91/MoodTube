@@ -1,14 +1,16 @@
+
+
 .index {
     background-color: rgb(250, 248, 248);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .home_body {
     display: flex;
-    justify-content: space-between;
 }
 
 .home_body_icons {
