@@ -37,8 +37,10 @@
 }
 
 .nav_moodtube {
-    font-size: 20px;
+    font-size: 18px;
+    transform: scale(.9, 1.15);
     letter-spacing: -.5px;
+    font-weight: 550;
 }
 
 .search_bar {
@@ -123,7 +125,7 @@
 }
 
 .nav_dropdown_top_user {
-    color: red;
+    color: rgb(223, 137, 137);
     padding: 5px;
 }
 
@@ -147,7 +149,7 @@
 }
 
 .nav_dd_bot_icon {
-    color: rgb(141, 141, 141);
+    color: rgb(161, 161, 161);
 }
 
 .nav_dropdown_signout {

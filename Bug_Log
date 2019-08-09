@@ -32,6 +32,11 @@ Lengthy Bugs :
     - had to attach pics to all my sseded vids, then save! them
     - didn't interpolate correcly in my video item form
 
+8. When I refactored my headernav my signin button didn't work
+    - url still appended '/login' but it wasn't showing up
+    - login page was actually showing beneath main page
+    - utilized exact routes and changed my switch statements and renders
+    - so logic renders correctly
 
 
 Common Bugs :
