@@ -115,7 +115,7 @@ class HeaderNav extends React.Component{
                     <Link to='/upload' className="nav_upload">
                         <i className="fas fa-file-video"></i>
                     </Link>
-                    <div>
+                    {/* <div>
                         <i className="fas fa-th nav_upload"></i>
                     </div>
                     <div>
@@ -123,7 +123,7 @@ class HeaderNav extends React.Component{
                     </div>
                     <div>
                         <i className="fas fa-bell nav_upload"></i>
-                    </div>
+                    </div> */}
                     <div className="nav_right_parent" onBlur={this.setBlurListener(this.dropDownRef, this.closeMenu)}>
                         {signInButton}
                             {menu}
