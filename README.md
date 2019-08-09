@@ -41,7 +41,6 @@ account for guests to test the functionality of the app.
 * * Videos are first displayed in rows under certain categories. The categories and videso are then displayed vertically to mimic the youtube format. Clicking on a video sends you to that video's show page.
 
 * * Recommended videos specific to user queries will be done in the slightly longer future!
-![image](/Users/lingxiahe/Desktop/MoodTube/app/assets/images/readme/moodtubehome.png)
 
 * * * Video Show Page
 ![image](/Users/lingxiahe/Desktop/MoodTube/app/assets/images/readme/moodtubeshow.png)
