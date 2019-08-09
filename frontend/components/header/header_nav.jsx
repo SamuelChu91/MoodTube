@@ -80,11 +80,16 @@ class HeaderNav extends React.Component{
                         <i className="fas fa-user fa-2x nav_dropdown_top_user"></i>
                     </div>
                     <div>
-                        <li>{currentUser.username}</li>
-                        <li>{currentUser.email}</li>
+                        <li className="nav_dropdown_username">{currentUser.username}</li>
+                        <li className="nav_dropdown_email">{currentUser.email}</li>
                     </div>
                 </div>
-                      <li><button onClick={logout}>Sign Out</button></li>
+                    <div className="nav_dropdown_bot_stuff">
+                        <i className="far fa-arrow-alt-circle-right fa-2x nav_dd_bot_icon" onClick={logout}></i>
+                      <li><button onClick={logout} className="nav_dropdown_signout">
+                          <p>Sign out</p>
+                          </button></li>
+                    </div>
                    </ul>
             </div>
         } else { menu = null}

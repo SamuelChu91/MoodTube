@@ -6,7 +6,7 @@ class VideoShowItem extends React.Component {
         if (!this.props.video) {return null};
         return (
             <div>
-                <video width="650" height="375" src="https://moodtube-seeds.s3.amazonaws.com/free_pup.mp4" controls autoPlay className="vid_player"></video>
+                <video width="650" height="375" src={this.props.video.videoUrl} controls autoPlay className="vid_player"></video>
                 {/* <h1>please</h1> */}
                 <h2 className="vid_title">{this.props.video.title}</h2>
                 <br/>

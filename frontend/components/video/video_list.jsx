@@ -24,6 +24,7 @@ class VideoList extends React.Component {
     }
 
     render() {
+        // debugger
         const random = this.shuffle(this.props.videos)
 
         const trendingVideos = random.slice(0, 6).map((video) =>{

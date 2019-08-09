@@ -24,7 +24,7 @@ class Video < ApplicationRecord
     class_name: :User
 
     has_one_attached :pic
-    # has_one_attached :vid
+    has_one_attached :vid
 
     # def ensure_video
     #     unless self.pic.attached?

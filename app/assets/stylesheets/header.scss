@@ -118,11 +118,43 @@
 
 .nav_dropdown_top {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .nav_dropdown_top_user {
     color: red;
+    padding: 5px;
+}
+
+.nav_dropdown_username {
+    padding: 3px;
+}
+
+.nav_dropdown_email {
+    padding: 3px;
+    font-size: 14px;
+}
+
+.nav_dropdown_bot_stuff {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &:hover {
+        background: rgb(182, 182, 182);
+    }
+}
+
+.nav_dd_bot_icon {
+    color: rgb(141, 141, 141);
+}
+
+.nav_dropdown_signout {
+    text-decoration: none;
+    background: #ffffff;
+    background-color: white;
+    font-size: 14px;
 }
 
 .nav_dropdown_div {
