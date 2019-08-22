@@ -18,7 +18,7 @@ export const removeVideo = (id) => ({
 
 export const receiveVideos = (videos) => ({
     type: RECEIVE_VIDEOS,
-    videos
+    videos,
 })
 
 export const showVids = () => dispatch => {

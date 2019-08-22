@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :videos
+    resources :videos do
+      resources :comments, only: [:create, :destroy, :edit, :index]
+    end
   end
 
 end
+
+# db models controllers routes 
+# jbuilders ajax actions reducers components
