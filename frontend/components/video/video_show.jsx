@@ -42,12 +42,15 @@ class VideoShow extends React.Component {
                 <div className="show_body_window">
                     <VideoShowItem video={this.props.video} />
                     <div className="show_right">
-                        <div className="show_side_header">
-                            <p className="show_side_header_up">Up next</p>
-                            <p className="show_side_header_auto">AUTOPLAY</p>
+                        <div className="show_right_top">
+                            <div className="show_side_header">
+                                <p className="show_side_header_up">Up next</p>
+                                <p className="show_side_header_auto">AUTOPLAY</p>
+                            </div>
+                            {sideList[0]}
                         </div>
                         <ul className="show_side_vids">
-                            {sideList}
+                            {sideList.slice(1)}
                         </ul>
                     </div>
                 </div>

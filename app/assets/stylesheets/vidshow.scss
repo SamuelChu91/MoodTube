@@ -13,14 +13,19 @@
     width: 400px;
 }
 
+.show_right_top {
+    align-items: stretch;
+    margin: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
 .show_side_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 12px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid grey;
 }
 
 .show_side_header_up {
