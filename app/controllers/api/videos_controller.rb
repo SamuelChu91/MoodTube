@@ -44,10 +44,19 @@ class Api::VideosController < ApplicationController
     # need video id and title string param
     # pass in string as wild car showing up in url
     def search
-        
+        title = params[:title]
+
+        @videos = Video.where('title ILIKE ?', "%#{title}%")
+
+        if @videos.nil?
+            render json: "No results found"
+        else
+            # render "api/videos/search"
+            render :index
+        end
     end
     
     def video_params
-        params.require(:video).permit(:title, :description, :poster_id)
+        params.require(:video).permit(:title, :description, :poster_id, :string)
     end
 end

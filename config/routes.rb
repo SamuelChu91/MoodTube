@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy, :edit, :index]
     end
 
-    get 'api/videos/:string', :to => 'api#search'
+    get 'videos/search/:title', :to => 'videos#search'
   end
 
 end
