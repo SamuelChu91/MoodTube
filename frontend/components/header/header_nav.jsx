@@ -5,17 +5,34 @@ class HeaderNav extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            toggled: false
+            toggled: false,
+            title: "",
         };
+
         this.dropDownRef = React.createRef();
         this.openMenu = this.openMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+
         this.handleLogIn = this.handleLogIn.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     handleLogIn() {
         this.props.history.push('/login');
-    }
+    };
+
+    handleSearch() {
+        // debugger
+        // this.props.history.push(`/videos/search/${this.state.title}`);
+        this.props.search(`${this.state.title}`)
+    };
+
+    handleInput(field) {
+        return (e) => {
+            this.setState({[field]: e.target.value});
+        };
+    };
 
     openMenu(e) {
         e.preventDefault();
@@ -106,9 +123,9 @@ class HeaderNav extends React.Component{
                         </h1>
                     </Link>
                 </div>
-                <form>
-                    <input type="text" placeholder="Search" className="search_bar"/>
-                    <button className="search_icon">
+                <form onSubmit={this.handleSearch}>
+                    <input onChange={this.handleInput('title')} type="text" placeholder="Search" className="search_bar"/>
+                    <button onClick={this.handleSearch} className="search_icon">
                         <i className="fas fa-search"></i>
                     </button>
                 </form>

@@ -2,19 +2,22 @@ import { connect } from 'react-redux';
 import HeaderNav from './header_nav';
 import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router';
+import { searchVideos } from '../../actions/video_actions';
+
 
 const msp = state => {
     // debugger
     return {
         currentUser: state.session.user,
         logged_in: Boolean(state.session.user),
-        users: state.users
+        users: state.users,
     }
 };
 
 const mdp = dispatch => {
     return {
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        search: (title) => dispatch(searchVideos(title))
     }
 };
 

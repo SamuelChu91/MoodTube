@@ -31,6 +31,14 @@ export const editVideo = (video) => {
 export const deleteVideo = (id) => {
     return $.ajax({
         method: 'DELETE',
-        url: `api/videos/${id}`
+        url: `api/videos/${id}`,
+    })
+}
+
+export const searchVideos = (title) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/videos/search/${title}`,
+        data: { title },
     })
 }

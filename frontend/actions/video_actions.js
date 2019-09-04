@@ -19,7 +19,8 @@ export const removeVideo = (id) => ({
 export const receiveVideos = (videos) => ({
     type: RECEIVE_VIDEOS,
     videos,
-})
+});
+
 
 export const showVids = () => dispatch => {
     return VideoApUtil.receiveVideos()
@@ -44,4 +45,9 @@ export const uploadVideo = (video) => dispatch => {
 export const deleteVideo = (id) => dispatch => {
     return VideoApUtil.deleteVideo(id)
         .then(id => dispatch(removeVideo(id)));
+};
+
+export const searchVideos = (title) => dispatch => {
+    return VideoApUtil.searchVideos(title)
+        .then(videos => dispatch(receiveVideos(videos)));
 };

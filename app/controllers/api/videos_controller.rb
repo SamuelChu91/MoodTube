@@ -44,8 +44,10 @@ class Api::VideosController < ApplicationController
     # need video id and title string param
     # pass in string as wild car showing up in url
     def search
+        # debugger
         title = params[:title]
 
+        # debugger
         @videos = Video.where('title ILIKE ?', "%#{title}%")
 
         if @videos.nil?

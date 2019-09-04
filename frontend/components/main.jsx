@@ -9,7 +9,7 @@ const Main = () => (
     <HeaderNavContainer/>
         <Switch>
             <Route exact path='/videos/:id' component={VideoShowContainer} />
-            {/* <Route exact path='/results' component={VideoSearch} /> */}
+            {/* <Route exact path='/videos/search/:title' component={} */}
             <Route exact path='/' component={Home} />
         </Switch>
     </div>
