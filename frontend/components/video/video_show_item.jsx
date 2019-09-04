@@ -1,8 +1,15 @@
 import React from 'react';
+import CommentForm from '../comments/comment_container';
+import CommentFormContainer from'../comments/comment_container';
 
 class VideoShowItem extends React.Component {
+    constructor(props) {
+        super(props);
+
+    };
+
     render() {
-        // debugger
+        debugger
         if (!this.props.video) {return null};
         return (
             <div>
@@ -25,10 +32,25 @@ class VideoShowItem extends React.Component {
                         <br/>
                         <p className="vid_show_more">SHOW MORE</p>
                     </div>
+                    <CommentForm />
+
                 </div>
             </div>
         );
     };
 };
 
-export default VideoShowItem;
+const msp = (state, ownProps) => {
+    debugger
+    return {
+        comments: state.comments
+    }
+};
+
+const mdp = dispatch => {
+    return {
+
+    }
+};
+
+export default withRouter(connect(msp, mdp)(VideoShowItem));

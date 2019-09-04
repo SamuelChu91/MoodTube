@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
-import Comment from './comment_form';
 import { withRouter } from 'react-router';
 import { showComments, createComment, editComment, deleteComment } from '../../actions/comment_actions';
+import CommentForm from './comment_form';
 
-const msp = state => {
-    // debugger
+const msp = (state, ownProps) => {
+    debugger
     return {
         currentUser: state.session.user,
         logged_in: Boolean(state.session.user),
         users: state.users,
+        videoId: ownProps.match.params.id,
     }
 };
 
 const mdp = dispatch => {
+    debugger
     return {
         // logout: () => dispatch(logout())
         showComments: (video_id) => dispatch(showComments(video_id)),
@@ -22,7 +24,7 @@ const mdp = dispatch => {
     }
 };
 
-export default withRouter(connect(msp, mdp)(Comment));
+export default withRouter(connect(msp, mdp)(CommentForm));
 
 // videos should also grab comments, other data because
 // they all show up on the video

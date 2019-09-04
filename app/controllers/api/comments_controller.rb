@@ -19,6 +19,8 @@ class Api::CommentsController < ApplicationController
         if @video
             @comment = @video.comments.new(comment_params)
             @comment.author_id = current_user.id
+            @comment.likes = 0
+            @comment.dislikes = 0
             if @comment.save
                 render :show
             else

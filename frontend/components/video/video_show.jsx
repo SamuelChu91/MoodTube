@@ -24,6 +24,7 @@ class VideoShow extends React.Component {
     componentDidMount() {
         this.props.showVid(this.props.match.params.id);
         this.props.showVids();
+        // this.props.showComments();
         window.scrollTo(0,0);
     }
 
