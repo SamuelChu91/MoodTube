@@ -12,7 +12,6 @@ class CommentForm extends React.Component {
     };
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         const comment = {
             body: this.state.body,

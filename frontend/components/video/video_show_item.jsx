@@ -1,6 +1,8 @@
 import React from 'react';
 import CommentForm from '../comments/comment_container';
 import CommentFormContainer from'../comments/comment_container';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 
 class VideoShowItem extends React.Component {
     constructor(props) {
@@ -9,7 +11,12 @@ class VideoShowItem extends React.Component {
     };
 
     render() {
-        debugger
+        const commentsList = this.props.comments.map((comment) => {
+            return (
+                <li key={comment.id}>{comment.body}</li>
+            )
+        });
+        // debugger
         if (!this.props.video) {return null};
         return (
             <div>
@@ -33,7 +40,9 @@ class VideoShowItem extends React.Component {
                         <p className="vid_show_more">SHOW MORE</p>
                     </div>
                     <CommentForm />
-
+                    <ul>
+                        {commentsList}
+                    </ul>
                 </div>
             </div>
         );
@@ -42,15 +51,21 @@ class VideoShowItem extends React.Component {
 
 const msp = (state, ownProps) => {
     debugger
+    const video = state.videos[ownProps.match.params.id] || {};
+    const comments = video.comments || {};
     return {
-        comments: state.comments
+        comments: Object.values(comments),
     }
 };
 
-const mdp = dispatch => {
-    return {
+// needed to lazy init everytime we key into value, if not there
+// returned undefined which broke code, circumvent that with empty {}
 
-    }
-};
 
-export default withRouter(connect(msp, mdp)(VideoShowItem));
+// const mdp = dispatch => {
+//     return {
+
+//     }
+// };
+
+export default withRouter(connect(msp)(VideoShowItem));

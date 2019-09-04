@@ -41,6 +41,12 @@ class Api::VideosController < ApplicationController
         end
     end
     
+    # need video id and title string param
+    # pass in string as wild car showing up in url
+    def search
+        
+    end
+    
     def video_params
         params.require(:video).permit(:title, :description, :poster_id)
     end

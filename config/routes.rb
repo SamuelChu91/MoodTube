@@ -8,9 +8,13 @@ Rails.application.routes.draw do
     resources :videos do
       resources :comments, only: [:create, :destroy, :edit, :index]
     end
+
+    get 'api/videos/:string', :to => 'api#search'
   end
 
 end
 
+
+# verb 'url', :to => 'api#videos_search'
 # db models controllers routes 
 # jbuilders ajax actions reducers components
