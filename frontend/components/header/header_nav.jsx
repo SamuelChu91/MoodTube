@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class HeaderNav extends React.Component{
     constructor(props) {
@@ -7,8 +8,9 @@ class HeaderNav extends React.Component{
         this.state = {
             toggled: false,
             title: "",
+            //videos:{}
         };
-
+        
         this.dropDownRef = React.createRef();
         this.openMenu = this.openMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
@@ -23,13 +25,14 @@ class HeaderNav extends React.Component{
     };
 
     handleSearch() {
-        // debugger
-        // this.props.history.push(`/videos/search/${this.state.title}`);
-        this.props.search(`${this.state.title}`)
+        this.props.history.push(`/videos/search/${this.state.title}`);
+        // this.props.search(`${this.state.title}`);
     };
 
     handleInput(field) {
+        // debugger
         return (e) => {
+            
             this.setState({[field]: e.target.value});
         };
     };
@@ -45,6 +48,7 @@ class HeaderNav extends React.Component{
     // }
 
     closeMenu(e) {
+        e.preventDefault();
         // debugger
         // if (e.currentTarget.children[1] !== this.dropdownMenu){
             this.setState({ toggled: false })
@@ -133,15 +137,15 @@ class HeaderNav extends React.Component{
                     <Link to='/upload' className="nav_upload">
                         <i className="fas fa-file-video"></i>
                     </Link>
-                    <div>
+                    {/* <div>
                         <i className="fas fa-th nav_upload"></i>
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                         <i className="fas fa-share-square nav_upload"></i>
                     </div>
                     <div>
                         <i className="fas fa-bell nav_upload"></i>
-                    </div>
+                    </div> */}
                     <div className="nav_right_parent" onBlur={this.setBlurListener(this.dropDownRef, this.closeMenu)}>
                         {signInButton}
                             {menu}
@@ -152,4 +156,4 @@ class HeaderNav extends React.Component{
     }
 }
 
-export default HeaderNav;
+export default withRouter(HeaderNav);

@@ -5,6 +5,7 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const UPLOAD_VIDEO = "UPLOAD_VIDEO";
 export const EDIT_VIDEO = "EDIT_VIDEO";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
+export const SEARCH_VIDEOS = "SEARCH_VIDEOS";
 
 export const receiveVideo = (video) => ({
     type: RECEIVE_VIDEO,
@@ -18,6 +19,11 @@ export const removeVideo = (id) => ({
 
 export const receiveVideos = (videos) => ({
     type: RECEIVE_VIDEOS,
+    videos,
+});
+
+export const searchVideos = (videos) => ({
+    type: SEARCH_VIDEOS,
     videos,
 });
 
@@ -47,7 +53,7 @@ export const deleteVideo = (id) => dispatch => {
         .then(id => dispatch(removeVideo(id)));
 };
 
-export const searchVideos = (title) => dispatch => {
+export const searchVids = (title) => dispatch => {
     return VideoApUtil.searchVideos(title)
-        .then(videos => dispatch(receiveVideos(videos)));
+        .then(videos => dispatch(searchVideos(videos)));
 };

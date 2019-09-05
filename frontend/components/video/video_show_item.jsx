@@ -8,7 +8,23 @@ class VideoShowItem extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            subscribed: false,
+        };
+
+        this.handleSub = this.handleSub.bind(this);
+        this.handleSubbed = this.handleSubbed.bind(this);
     };
+
+    handleSub(e) {
+        e.preventDefault();
+        this.setState({ subscribed: true })
+    }
+
+    handleSubbed(e) {
+        e.preventDefault();
+        this.setState({ subscribed: false })
+    }
 
     render() {
         const commentsList = this.props.comments.map((comment) => {
@@ -17,6 +33,15 @@ class VideoShowItem extends React.Component {
             )
         });
         // debugger
+
+        let subButton;
+
+        if (this.props.currentUser && !this.state.subscribed) {
+            subButton = <button onClick={this.handleSub} className="vid_show_sub">SUBSCRIBE 108k</button>
+        } else {
+            subButton = <button onClick={this.handleSubbed} className="vid_show_subbed">SUBSCRIBED 108k</button>
+        };
+
         if (!this.props.video) {return null};
         return (
             <div>
@@ -32,7 +57,8 @@ class VideoShowItem extends React.Component {
                             <i className="fas fa-user vid_show_channel_icon fa-2x"></i>
                             <p>Quirky Channel Name</p>
                         </div>
-                        <button className="vid_show_sub">SUBSCRIBE 3M</button>
+                        {/* <button className="vid_show_sub">SUBSCRIBE 3M</button> */}
+                        {subButton}
                     </section>
                     <div className="vid_show_desc_stuff">
                         <p className="vid_description">{this.props.video.description}</p>
@@ -50,11 +76,14 @@ class VideoShowItem extends React.Component {
 };
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     const video = state.videos[ownProps.match.params.id] || {};
     const comments = video.comments || {};
     return {
         comments: Object.values(comments),
+        currentUser: state.session.user,
+        logged_in: Boolean(state.session.user),
+        users: state.users,
     }
 };
 

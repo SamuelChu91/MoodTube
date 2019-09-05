@@ -14,10 +14,6 @@ const mdp = (dispatch, ownProps) => {
     return ({
         showVid: (id) => dispatch(showVid(id)),
         showVids: () => dispatch(showVids()),
-        // showComments: (video_id) => dispatch(showComments(video_id)),
-        // createComment: (comment) => dispatch(createComment(comment)),
-        // editComment: (comment) => dispatch(editComment(comment)),
-        // deleteComment: (comment) => dispatch(deleteComment(comment)),
     });
 };
 

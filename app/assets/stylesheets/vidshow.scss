@@ -93,6 +93,21 @@
     color: white;
 }
 
+.vid_show_subbed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    width: 145px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 2px;
+    outline: none;
+    background: lightgrey;
+    font-size: 14px;
+    color: #606060;
+}
+
 .vid_show_desc_stuff {
     display: flex;
     flex-direction: column;

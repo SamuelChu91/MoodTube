@@ -1,6 +1,5 @@
 import React from 'react';
 import VideoShowItem from './video_show_item';
-import HeaderNavContainer from '../header/header_nav_container';
 import VideoSideItem from './video_side_item';
 
 class VideoShow extends React.Component {
