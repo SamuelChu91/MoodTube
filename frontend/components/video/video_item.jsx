@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 class VideoItem extends React.Component {
     render() {
-        // debugger
         return (
             <div className="vid_item_wrapper">
                 <Link to={`/videos/${this.props.video.id}`} className="vid_index">

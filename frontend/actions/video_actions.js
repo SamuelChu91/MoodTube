@@ -31,7 +31,6 @@ export const searchVideos = (videos) => ({
 export const showVids = () => dispatch => {
     return VideoApUtil.receiveVideos()
         .then(videos => {
-            // debugger
             return(
                 dispatch(receiveVideos(videos))
             );

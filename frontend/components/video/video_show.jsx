@@ -36,7 +36,6 @@ class VideoShow extends React.Component {
                 <li key={video.id} className="vid_index_vid"><VideoSideItem video={video} /></li>
             );
         });
-        // debugger
         return (
             <div className="show_window">
                 <div className="show_body_window">
@@ -56,7 +55,7 @@ class VideoShow extends React.Component {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
 export default VideoShow;

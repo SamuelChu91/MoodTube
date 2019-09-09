@@ -29,7 +29,6 @@ class CommentForm extends React.Component {
     };
 
     render() {
-        // debugger
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -42,6 +41,6 @@ class CommentForm extends React.Component {
         )
     };
 
-}
+};
 
 export default CommentForm;

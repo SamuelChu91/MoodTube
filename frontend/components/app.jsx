@@ -11,13 +11,10 @@ import HeaderNavContainer from './header/header_nav_container';
 import Main from './main';
 
 const App = () => {
-    // debugger
     return (
     <>
         <div className='all'> 
-        {/* <HeaderNavContainer/> */}
             <Switch>
-                {/* <Main/> */}
                 <AuthRoute exact path='/signup' component={SignUpFormContainer} />
                 <AuthRoute exact path='/login' component={LogInFormContainer} />
                 <Route exact path='/upload' component={VideoUploadContainer} />

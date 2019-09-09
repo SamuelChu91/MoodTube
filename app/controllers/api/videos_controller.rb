@@ -43,12 +43,14 @@ class Api::VideosController < ApplicationController
     
     # need video id and title string param
     # pass in string as wild car showing up in url
+
     def search
-        # debugger
+
         title = params[:title]
 
-        # debugger
         @videos = Video.where('title ILIKE ?', "%#{title}%")
+        # sql query where string of title is found in the vid title
+        
         if @videos.nil?
             render json: "No results found"
         else

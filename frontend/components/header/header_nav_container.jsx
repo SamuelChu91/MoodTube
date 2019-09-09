@@ -6,7 +6,6 @@ import { searchVideos } from '../../actions/video_actions';
 
 
 const msp = state => {
-    // debugger
     return {
         currentUser: state.session.user,
         logged_in: Boolean(state.session.user),

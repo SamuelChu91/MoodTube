@@ -17,32 +17,28 @@ class VideoList extends React.Component {
             a[j] = x;
         }
         return a;
-    }
+    };
 
     componentDidMount() {
         this.props.showVids();
-    }
+    };
 
     render() {
-        // debugger
         const random = this.shuffle(this.props.videos)
 
         const trendingVideos = random.slice(0, 6).map((video) =>{
-            // debugger
             return (
                 <li key={video.id} className="vid_index_vid"><VideoItem video={video} /></li>
             );
         });
         
         const recommendedVideos = random.slice(6, 12).map((video) => {
-            // debugger
             return (
                 <li key={video.id} className="vid_index_vid"><VideoItem video={video} /></li>
             );
         });
 
         const moreVideos = random.slice(12, 18).map((video) => {
-            // debugger
             return (
                 <li key={video.id} className="vid_index_vid"><VideoItem video={video} /></li>
             );
@@ -72,7 +68,7 @@ class VideoList extends React.Component {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
 export default VideoList;

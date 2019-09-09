@@ -30,7 +30,6 @@ class HeaderNav extends React.Component{
     };
 
     handleInput(field) {
-        // debugger
         return (e) => {
             
             this.setState({[field]: e.target.value});
@@ -40,36 +39,27 @@ class HeaderNav extends React.Component{
     openMenu(e) {
         e.preventDefault();
         this.setState({ toggled: true })
-    }
-        
-    //     , () => {
-    //         document.addEventListener('click', this.closeMenu);
-    //     });
-    // }
+    };
 
     closeMenu(e) {
         e.preventDefault();
-        // debugger
         // if (e.currentTarget.children[1] !== this.dropdownMenu){
             this.setState({ toggled: false })
         // }
-    }
+    };
 
     setBlurListener(ref, callback) {
         return event => {
-            // debugger
             const { relatedTarget } = event;
             const node = ref.current;
-            // debugger
             if (node !== relatedTarget && !node.contains(relatedTarget)) {
                 callback();
             }
         };
-    }
+    };
     
     // refactor this, hacky
     // closeMenu(e) {
-    //     debugger
     //     if (!this.dropdownMenu.contains(e.target)) {
     //         this.setState({ toggled: false }, () => {
     //             document.removeEventListener('click', this.closeMenu);
@@ -81,7 +71,6 @@ class HeaderNav extends React.Component{
     
     render () {
         const { currentUser, logout, logged_in } = this.props;
-        // debugger
         let signInButton;
         if (!logged_in) {
             signInButton = <button onClick={this.handleLogIn} className="nav_login">
@@ -114,8 +103,7 @@ class HeaderNav extends React.Component{
                     </div>
                    </ul>
             </div>
-        } else { menu = null}
-        // debugger
+        } else { menu = null};
         return (
             <div className="headnav">
                 <div className="nav_topleft">
@@ -153,7 +141,7 @@ class HeaderNav extends React.Component{
                 </div>
             </div>
         );
-    }
-}
+    };
+};
 
 export default withRouter(HeaderNav);

@@ -2,39 +2,41 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: "",
-            email: "",
-            password: ""
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
 
-    handleSubmit(e) {
-        e.preventDefault();
-        // debugger
-        this.props.signup(this.state)
+    const { clear, signup } = this.props;
+    this.clear = clear;
+    this.signup = signup;
+  };
+
+  componentWillUnmount() {
+    this.clear();
+  };
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.signup(this.state);
+  };
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
     };
+  };
 
-    handleInput(field) {
-        return (e) => {
-            this.setState({ [field]: e.target.value });
-            // debugger
-        };
-    };
 
-    componentWillUnmount() {
-        this.props.clear();
-    }
-
-    render() {
-        // debugger
-        const { errors } = this.props;
-        const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
-        return (
+  render() {
+    const { errors } = this.props;
+    const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
+    return (
             <div className="signup_window">
                 <div className='sign_up_box'>
                         <div className='signup_left'>
@@ -74,8 +76,8 @@ class SignUpForm extends React.Component {
                         </div>
                 </div>
             </div>
-        )
-    }
-}
+    )
+  };
+};
 
 export default SignUpForm;

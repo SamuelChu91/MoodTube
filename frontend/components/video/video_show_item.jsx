@@ -1,6 +1,5 @@
 import React from 'react';
 import CommentForm from '../comments/comment_container';
-import CommentFormContainer from'../comments/comment_container';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
@@ -19,12 +18,12 @@ class VideoShowItem extends React.Component {
     handleSub(e) {
         e.preventDefault();
         this.setState({ subscribed: true })
-    }
+    };
 
     handleSubbed(e) {
         e.preventDefault();
         this.setState({ subscribed: false })
-    }
+    };
 
     render() {
         const commentsList = this.props.comments.map((comment) => {
@@ -32,7 +31,6 @@ class VideoShowItem extends React.Component {
                 <li key={comment.id}>{comment.body}</li>
             )
         });
-        // debugger
 
         let subButton;
 
@@ -76,7 +74,6 @@ class VideoShowItem extends React.Component {
 };
 
 const msp = (state, ownProps) => {
-    // debugger
     const video = state.videos[ownProps.match.params.id] || {};
     const comments = video.comments || {};
     return {

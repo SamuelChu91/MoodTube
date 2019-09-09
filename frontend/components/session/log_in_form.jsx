@@ -28,14 +28,13 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = { email: "AmIReal@email.com", password: "hunter12" };
         this.props.login(user);
-    }
+    };
 
     componentWillUnmount() {
         this.props.clear();
-    }
+    };
 
     render () {
-        // debugger
         const { errors } = this.props;
         const errorsList = errors.map((error, idx) => <li key={idx}>{error}</li>)
         return (
@@ -71,7 +70,7 @@ class LoginForm extends React.Component {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
 export default LoginForm;

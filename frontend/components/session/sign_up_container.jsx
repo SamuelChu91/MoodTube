@@ -8,7 +8,6 @@ import SignUpForm from './sign_up_form';
 // 500 error should check server
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         errors: state.errors.session,
         formType: "signup",
@@ -16,7 +15,6 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = (dispatch, ownProps) => {
-    // debugger
     return {
         signup: (user) => dispatch(signup(user)),
         clear: () => dispatch(clearErrors())

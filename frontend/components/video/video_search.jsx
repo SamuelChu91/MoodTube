@@ -14,22 +14,21 @@ class VideoSearch extends React.Component {
         // };
 
         this.componentDidMount = this.componentDidMount.bind(this);
-    }
+    };
 
     componentDidMount() {
         // this.props.showVids();
         this.props.search(`${this.props.title}`);
         window.scrollTo(0,0);
-    }
+    };
 
     componentDidUpdate(prevProps) {
         // this.props.showVids();
-        // debugger
         if (prevProps.match.params.title !== this.props.match.params.title) {
             this.props.search(`${this.props.title}`);
-        }
+        };
         window.scrollTo(0, 0);
-    }
+    };
 
     render() {
         const results = this.props.videos;
@@ -45,7 +44,7 @@ class VideoSearch extends React.Component {
                     <li key={video.id}><VideoSideItem video={video} /></li>
                 )
             })
-        }
+        };
 
         return (
             <div className="show_window">
@@ -54,8 +53,8 @@ class VideoSearch extends React.Component {
                 </ul>
             </div>
         )
-    }
-}
+    };
+};
 
 const msp = (state, ownProps) => {
     return ({
@@ -64,7 +63,6 @@ const msp = (state, ownProps) => {
         title: ownProps.match.params.title,
         // comment: state.comments[ownProps.match.params.id],
     });
-    // debugger
 };
 
 const mdp = (dispatch, ownProps) => {

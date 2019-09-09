@@ -4,7 +4,6 @@ import { showComments, createComment, editComment, deleteComment } from '../../a
 import CommentForm from './comment_form';
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         currentUser: state.session.user,
         logged_in: Boolean(state.session.user),
@@ -14,9 +13,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => {
-    // debugger
     return {
-        // logout: () => dispatch(logout())
         showComments: (video_id) => dispatch(showComments(video_id)),
         createComment: (comment) => dispatch(createComment(comment)),
         editComment: (comment) => dispatch(editComment(comment)),
