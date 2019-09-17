@@ -43,7 +43,7 @@ class VideoShowItem extends React.Component {
         if (!this.props.video) {return null};
         return (
             <div>
-                <video width="650" height="375" src={this.props.video.videoUrl} controlsList='nodownload' controls autoPlay className="vid_player"></video>
+                <video src={this.props.video.videoUrl} controlsList='nodownload' controls autoPlay className="vid_player"></video>
                 {/* <h1>please</h1> */}
                 <h2 className="vid_title">{this.props.video.title}</h2>
                 <br/>
