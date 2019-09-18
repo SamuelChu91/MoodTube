@@ -30,17 +30,19 @@ class CommentForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="comment_form_wrapper">
+                <button className="drop_button">
+                    <i className="fas fa-user nav_user_icon fa-2x"></i>
+                </button>
+                <form className="comment_form_form" onSubmit={this.handleSubmit}>
                     <label>
-                        <input onChange={this.handleInput('body')} type="text" placeholder='Add a public comment...' value={this.state.body}/>
+                        <input className="comment_form_input" onChange={this.handleInput('body')} type="text" placeholder='Add a public comment...' value={this.state.body}/>
                     </label>
-                    <input type="submit" value="COMMENT"/>
+                    <input className="comment_form_submit" type="submit" value="COMMENT"/>
                 </form>
             </div>
         )
     };
-
 };
 
 export default CommentForm;

@@ -2,6 +2,7 @@ import React from 'react';
 import CommentForm from '../comments/comment_container';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import { deleteComment, editComment } from '../../actions/comment_actions';
 
 class VideoShowItem extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class VideoShowItem extends React.Component {
 
         this.handleSub = this.handleSub.bind(this);
         this.handleSubbed = this.handleSubbed.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
     };
 
     handleSub(e) {
@@ -25,10 +27,22 @@ class VideoShowItem extends React.Component {
         this.setState({ subscribed: false })
     };
 
+    handleDelete(comment) {
+        this.props.deleteComment(comment);
+    };
+
     render() {
         const commentsList = this.props.comments.map((comment) => {
             return (
-                <li key={comment.id}>{comment.body}</li>
+                <div className="comment_form_wrapper">
+                    <button className="drop_button_comment">
+                        <i className="fas fa-user nav_user_icon fa-2x"></i>
+                    </button>
+                    <li className="comment_form_form" key={comment.id}>
+                        <p>{comment.body}</p>
+                        <button className="comment_form_submit" onClick={() => this.handleDelete(comment)}>DELETE</button>
+                    </li>
+                </div>
             )
         });
 
@@ -44,7 +58,6 @@ class VideoShowItem extends React.Component {
         return (
             <div>
                 <video src={this.props.video.videoUrl} controlsList='nodownload' controls autoPlay className="vid_player"></video>
-                {/* <h1>please</h1> */}
                 <h2 className="vid_title">{this.props.video.title}</h2>
                 <br/>
                 <p className="vid_views">1991 Views</p>
@@ -74,8 +87,11 @@ class VideoShowItem extends React.Component {
 };
 
 const msp = (state, ownProps) => {
-    const video = state.videos[ownProps.match.params.id] || {};
-    const comments = video.comments || {};
+    // const video = state.videos[ownProps.match.params.id] || {};
+    // const comments = video.comments || {};
+    // comments were deleting but only on refresh
+    // was deleting comments from the videos comments slice of state before
+    const comments = state.comments || {};
     return {
         comments: Object.values(comments),
         currentUser: state.session.user,
@@ -88,10 +104,11 @@ const msp = (state, ownProps) => {
 // returned undefined which broke code, circumvent that with empty {}
 
 
-// const mdp = dispatch => {
-//     return {
+const mdp = dispatch => {
+    return {
+        editComment: (comment) => dispatch(editComment(comment)),
+        deleteComment: (comment) => dispatch(deleteComment(comment)),
+    }
+};
 
-//     }
-// };
-
-export default withRouter(connect(msp)(VideoShowItem));
+export default withRouter(connect(msp, mdp)(VideoShowItem));

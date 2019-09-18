@@ -7,7 +7,7 @@ import HeaderNavContainer from './header/header_nav_container';
 
 const Main = () => (
     <div>
-    <HeaderNavContainer/>
+    <HeaderNavContainer />
         <Switch>
             <Route exact path='/videos/:id' component={VideoShowContainer} />
             <Route exact path='/videos/search/:title' component={VideoSearch} />

@@ -65,7 +65,7 @@ export const deleteComment = (comment) => dispatch => {
     return CommentApUtil.deleteComment(comment)
         .then(comment => {
             return (
-                dispatch(deleteComment(comment))
+                dispatch(removeComment(comment.id))
             );
         });
 };

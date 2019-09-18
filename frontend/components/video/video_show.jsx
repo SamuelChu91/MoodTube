@@ -49,7 +49,7 @@ class VideoShow extends React.Component {
                             {sideList[0]}
                         </div>
                         <ul className="show_side_vids">
-                            {/* {sideList.slice(1)} */}
+                            {sideList.slice(1)}
                         </ul>
                     </div>
                 </div>

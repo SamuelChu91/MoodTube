@@ -1,0 +1,47 @@
+.comment_form_wrapper {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment_form_form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.drop_button_comment {
+    height: 40px;
+    width: 42px;
+    /* color: white; */
+    border-color: white;
+    background-color: red;
+    border-radius: 50%;
+    &:focus{
+        outline: none;
+    }
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.comment_form_input {
+  cursor: text;
+  border: 1px;
+  border-bottom: 1px solid #545353;
+  width: 500px;
+}
+
+.comment_form_submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    width: 145px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 2px;
+    outline: none;
+    background: lightgrey;
+    font-size: 14px;
+    color: white;
+}

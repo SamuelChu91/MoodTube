@@ -107,7 +107,8 @@ class HeaderNav extends React.Component{
         return (
             <div className="headnav">
                 <div className="nav_topleft">
-                    <i className="fas fa-user-graduate nav_topleft_icon"></i>
+                    {/* <i className="fas fa-user-graduate nav_topleft_icon"></i> */}
+                    <a href="https://samuelchu91.github.io/" className="fas fa-user-graduate nav_topleft_icon" target="_blank"></a>
                     <Link to ='/' className="nav_logo">
                         <i className="fab fa-youtube the_logo fa-2x"></i>
                         <h1 className="nav_moodtube">
