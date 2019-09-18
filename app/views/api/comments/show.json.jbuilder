@@ -1,4 +1,5 @@
-json.extract! @comment, :id, :body
-json.videoId @comment.video_id
-json.authorId @comment.author_id
+json.extract! @comment, :id, :body, :video_id, :author_id
+# json.video_id @comment.video_id
+# json.author_id @comment.author_id
+json.username @comment.user.username
 

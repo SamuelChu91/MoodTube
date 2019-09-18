@@ -31,19 +31,29 @@ class VideoShowItem extends React.Component {
         this.props.deleteComment(comment);
     };
 
+    componentDidUpdate(prevProps) {
+        
+    };
+
     render() {
+        const videoId = this.props.videoId;
         const commentsList = this.props.comments.map((comment) => {
-            return (
-                <div className="comment_form_wrapper">
-                    <button className="drop_button_comment">
-                        <i className="fas fa-user nav_user_icon fa-2x"></i>
-                    </button>
-                    <li className="comment_form_form" key={comment.id}>
-                        <p>{comment.body}</p>
-                        <button className="comment_form_submit" onClick={() => this.handleDelete(comment)}>DELETE</button>
-                    </li>
-                </div>
-            )
+            if (comment.video_id === parseInt(videoId)) {
+                return (
+                    <div className="comment_form_wrapper">
+                        <button className="drop_button_comment">
+                            <i className="fas fa-user nav_user_icon fa-2x"></i>
+                        </button>
+                        <li className="comment_form_form" key={comment.id}>
+                            <div>
+                                <p>{comment.username}</p>
+                                <p className="vid_description">{comment.body}</p>
+                            </div>
+                            <button className="comment_form_submit" onClick={() => this.handleDelete(comment)}>DELETE</button>
+                        </li>
+                    </div>
+                )
+            }
         });
 
         let subButton;
@@ -92,7 +102,9 @@ const msp = (state, ownProps) => {
     // comments were deleting but only on refresh
     // was deleting comments from the videos comments slice of state before
     const comments = state.comments || {};
+    const videoId = ownProps.match.params.id || "";
     return {
+        videoId,
         comments: Object.values(comments),
         currentUser: state.session.user,
         logged_in: Boolean(state.session.user),
