@@ -42,7 +42,7 @@ class VideoSearch extends React.Component {
         } else if (Object.keys(results).length > 0) {
             resultList = Object.values(results).map((video) => {
                 return (
-                    <li key={video.id}><VideoSideItem video={video} /></li>
+                    <li key={video.id} className="search_vids"><VideoSideItem video={video} /></li>
                 )
             })
         } else if (Object.keys(results).length === 0) {
