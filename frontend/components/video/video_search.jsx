@@ -24,6 +24,7 @@ class VideoSearch extends React.Component {
 
     componentDidUpdate(prevProps) {
         // this.props.showVids();
+        // to search from search page
         if (prevProps.match.params.title !== this.props.match.params.title) {
             this.props.search(`${this.props.title}`);
         };
@@ -44,13 +45,33 @@ class VideoSearch extends React.Component {
                     <li key={video.id}><VideoSideItem video={video} /></li>
                 )
             })
+        } else if (Object.keys(results).length === 0) {
+            resultList = <img src={window.NoResults} alt=""/>
+            // resultList = <p>test</p>
         };
 
         return (
             <div className="show_window">
-                <ul className="vid_search_list">
-                    {resultList}
-                </ul>
+                <div className="search_wrapper">
+                    <div className="home_body_icons">
+                        <a href="https://github.com/SamuelChu91">
+                            <i className="fab fa-github nav_upload"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samuel-chu-8a6259119/">
+                            <i className="fab fa-linkedin-in nav_upload"></i>
+                        </a>
+                        <a href="https://twitter.com/Chuuperlol">
+                            <i className="fab fa-twitter nav_upload"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Chuuperlol">
+                            <i className="fab fa-facebook-f nav_upload"></i>
+                        </a>
+                    </div>
+                    <ul className="vid_search_list">
+                        <p className="search_header">Search Results</p>
+                        {resultList}
+                    </ul>
+                </div>
             </div>
         )
     };
