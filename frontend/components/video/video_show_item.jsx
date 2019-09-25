@@ -12,10 +12,16 @@ class VideoShowItem extends React.Component {
             subscribed: false,
         };
 
+        this.handleSubErr = this.handleSubErr.bind(this);
         this.handleSub = this.handleSub.bind(this);
         this.handleSubbed = this.handleSubbed.bind(this);
         // this.handleDelete = this.handleDelete.bind(this);
     };
+
+    handleSubErr(e) {
+        e.preventDefault();
+        this.props.history.push('/login');
+    }
 
     handleSub(e) {
         e.preventDefault();
@@ -58,9 +64,13 @@ class VideoShowItem extends React.Component {
 
         let subButton;
 
-        if (this.props.currentUser && !this.state.subscribed) {
+        if (!this.props.logged_in) {
+            subButton = <button onClick={this.handleSubErr} className="vid_show_sub">SUBSCRIBE 108k</button>
+        }
+
+        if (this.props.logged_in && !this.state.subscribed) {
             subButton = <button onClick={this.handleSub} className="vid_show_sub">SUBSCRIBE 108k</button>
-        } else {
+        } else if (this.props.logged_in && this.state.subscribed) {
             subButton = <button onClick={this.handleSubbed} className="vid_show_subbed">SUBSCRIBED 108k</button>
         };
 

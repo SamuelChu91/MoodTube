@@ -18,8 +18,12 @@ class CommentForm extends React.Component {
             video_id: this.props.videoId,
             author_id: this.props.currentUser,
         };
-        this.props.createComment(comment);
-        this.setState({body: "" });
+        if (this.props.logged_in) {
+            this.props.createComment(comment);
+            this.setState({body: "" });
+        } else {
+            this.props.history.push('/login');
+        }
     };
 
     handleInput(field) {
