@@ -47,6 +47,7 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 RUN gem install bundler -v ${BUNDLER_VERSION} && \
     bundle config set without 'development test' && \
+    bundle update mimemagic --conservative && \
     bundle install --jobs 4 --retry 3
 
 # Install JS deps (this also triggers the webpack production build via the
