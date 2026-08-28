@@ -1,0 +1,14 @@
+.git
+node_modules
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+storage/*
+!storage/.keep
+public/assets
+config/master.key
+.DS_Store
+Bug_Log
+Presentation_Notes
+Sample_State

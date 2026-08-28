@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: moodtube
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: RAILS_MASTER_KEY
+        sync: false        # set manually in the Render dashboard
+      - key: DATABASE_URL
+        sync: false        # paste your Neon connection string here
