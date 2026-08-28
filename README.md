@@ -1,7 +1,7 @@
 # MoodTube
 #### by Samuel Chu
 
-[**Live Link**](https://your-app-name.onrender.com/) <!-- TODO: replace with your actual Render URL once deployed -->
+[**Live Link**](https://moodtube-2.onrender.com/)
 
 ## Features
 
