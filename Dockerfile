@@ -31,6 +31,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends --allow-una
       curl \
       git \
       xz-utils \
+      shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
 
 # Node.js for webpack + the asset pipeline — installed from the official

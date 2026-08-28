@@ -5,6 +5,10 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+# Pin mimemagic explicitly: the version marcel/activestorage originally
+# locked to (0.3.3) was later pulled from RubyGems entirely and can never
+# install again. 0.3.10 is the last release in the 0.3.x line still available.
+gem 'mimemagic', '~> 0.3.10'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
