@@ -27,12 +27,23 @@ RUN sed -i \
 # and libpq for the postgres client.
 RUN apt-get update -qq && apt-get install -y --no-install-recommends --allow-unauthenticated \
       build-essential \
-      libpq-dev \
       curl \
       git \
       xz-utils \
       shared-mime-info \
     && rm -rf /var/lib/apt/lists/*
+
+# Neon requires SCRAM authentication, which needs libpq version 10+.
+# Stretch only has libpq 9.6, which predates SCRAM entirely — no
+# connection-string workaround exists for that gap, unlike the earlier
+# SNI issue. Pull just the Postgres client library from Debian Buster
+# (the next release after Stretch) via apt pinning, leaving Ruby, build
+# tools, and everything else on the original Stretch base untouched.
+RUN echo 'deb [trusted=yes] http://archive.debian.org/debian buster main' > /etc/apt/sources.list.d/buster.list && \
+    printf 'Package: *\nPin: release n=buster\nPin-Priority: 100\n' > /etc/apt/preferences.d/buster-pin && \
+    apt-get update -qq && \
+    apt-get install -y --no-install-recommends --allow-unauthenticated -t buster libpq5 libpq-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 # Node.js for webpack + the asset pipeline — installed from the official
 # binary tarball rather than a distro package, since Stretch's package repos
