@@ -43,17 +43,17 @@ RUN curl -fsSL https://nodejs.org/dist/v16.20.2/node-v16.20.2-linux-x64.tar.xz -
 
 WORKDIR /app
 
-# Install gems first so Docker can cache this layer between builds
-COPY Gemfile Gemfile.lock ./
+# Copy the whole app once, up front. (We previously split this into two
+# copies to preserve Docker layer caching, but the second copy was
+# overwriting the Gemfile.lock fix from `bundle update` below with the
+# original unfixed lockfile from git — copying everything in one shot
+# avoids that class of bug, at the cost of some rebuild speed.)
+COPY . .
+
 RUN gem install bundler -v ${BUNDLER_VERSION} && \
     bundle config set without 'development test' && \
     bundle update mimemagic --conservative && \
     bundle install --jobs 4 --retry 3
-
-# Now copy the rest of the app — this must happen BEFORE npm install,
-# since its postinstall script runs the Webpack build, which needs
-# webpack.config.js and the frontend/ source already in place.
-COPY . .
 
 # Install JS deps (this also triggers the webpack production build via the
 # package.json "postinstall" script, producing app/assets/javascripts/bundle.js)
