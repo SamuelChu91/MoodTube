@@ -4,6 +4,12 @@
 
 FROM ruby:2.5.1-slim
 
+# The official ruby:2.5.1 image bakes in BUNDLER_VERSION=1.16.6, which
+# overrides any per-command version pinning. Override it here so every
+# `bundle` call in this image — install, asset build, migrations, server —
+# consistently uses the version our Gemfile.lock actually needs.
+ENV BUNDLER_VERSION=2.0.2
+
 # Debian "Stretch" (this image's base OS) is end-of-life and removed from
 # the normal mirrors — point apt at the archive instead so installs work.
 # Its signing keys have also expired since retirement, so we mark the repo
@@ -38,9 +44,9 @@ WORKDIR /app
 
 # Install gems first so Docker can cache this layer between builds
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler -v 2.0.2 && \
-    bundle _2.0.2_ config set without 'development test' && \
-    bundle _2.0.2_ install --jobs 4 --retry 3
+RUN gem install bundler -v ${BUNDLER_VERSION} && \
+    bundle config set without 'development test' && \
+    bundle install --jobs 4 --retry 3
 
 # Install JS deps (this also triggers the webpack production build via the
 # package.json "postinstall" script, producing app/assets/javascripts/bundle.js)
@@ -58,7 +64,7 @@ ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 ENV RAILS_ENV=production
 ENV NODE_ENV=production
 
-RUN bundle _2.0.2_ exec rails assets:precompile
+RUN bundle exec rails assets:precompile
 
 # Serve /public ourselves since there's no separate nginx/Apache in this container
 ENV RAILS_SERVE_STATIC_FILES=true
@@ -70,4 +76,4 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-CMD ["bundle", "_2.0.2_", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
