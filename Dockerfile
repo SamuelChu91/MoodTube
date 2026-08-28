@@ -50,13 +50,14 @@ RUN gem install bundler -v ${BUNDLER_VERSION} && \
     bundle update mimemagic --conservative && \
     bundle install --jobs 4 --retry 3
 
+# Now copy the rest of the app — this must happen BEFORE npm install,
+# since its postinstall script runs the Webpack build, which needs
+# webpack.config.js and the frontend/ source already in place.
+COPY . .
+
 # Install JS deps (this also triggers the webpack production build via the
 # package.json "postinstall" script, producing app/assets/javascripts/bundle.js)
-COPY package.json package-lock.json ./
 RUN npm install --no-audit --no-fund
-
-# Now copy the rest of the app
-COPY . .
 
 # Rails needs to boot fully to precompile assets, which means it needs the
 # credentials master key at build time. Render injects dashboard env vars as
