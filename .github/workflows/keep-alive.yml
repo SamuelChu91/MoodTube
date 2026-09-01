@@ -1,0 +1,1 @@
+yaml name: Keep Render app awake on: schedule: - cron: '*/14 * * * *' workflow_dispatch: jobs: ping: runs-on: ubuntu-latest steps: - name: Ping MoodTube run: curl -sS https://moodtube-2.onrender.com/ -o /dev/null
